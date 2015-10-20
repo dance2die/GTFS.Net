@@ -51,7 +51,10 @@
   <ItemGroup>
     <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\Maps\AgencyMap.cs" />
+    <Compile Include="Entities\Maps\RoutesMap.cs" />
     <Compile Include="Entities\Maps\StopsMap.cs" />
+    <Compile Include="Entities\Routes.cs" />
+    <Compile Include="Enums\RouteType.cs" />
     <Compile Include="Entities\Stops.cs" />
     <Compile Include="Enums\LocationType.cs" />
     <Compile Include="Parsers\EntitiesParser.cs" />

@@ -71,10 +71,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Fixtures\AgencyParserFixture.cs" />
     <Compile Include="Tests\AgencyParserTest.cs" />
     <Compile Include="Tests\ParserTestBase.cs" />
-    <Compile Include="Fixtures\StopsParserFixture.cs" />
+    <Compile Include="Tests\RoutesParserTest.cs" />
     <Compile Include="Tests\StopsParserTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +144,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Fixtures\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.GtfsNet\Project.GtfsNet.csproj">
       <Project>{29421eb2-5e0e-4345-9423-8d7b9dbffc35}</Project>
