@@ -75,6 +75,7 @@
     <Compile Include="Tests\ParserTestBase.cs" />
     <Compile Include="Tests\RoutesParserTest.cs" />
     <Compile Include="Tests\StopsParserTest.cs" />
+    <Compile Include="Tests\TripsParserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
