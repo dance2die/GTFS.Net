@@ -9,11 +9,10 @@ using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests
 {
-	public class AgencyParserTest : IClassFixture<AgencyParserFixture>
+	public class AgencyParserTest :  ParserTestBase, IClassFixture<AgencyParserFixture>
 	{
-		private const string PATH = "feeds/subway/agency.txt";
+		public override string TestFilePath { get; } = "feeds/subway/agency.txt";
 
-		private readonly ITestOutputHelper _output;
 		private readonly AgencyParserFixture _agencyParserFixture;
 
 		public AgencyParserTest(ITestOutputHelper output, AgencyParserFixture agencyParserFixture)
@@ -31,7 +30,7 @@ namespace Project.GtfsNet.Test.Tests
 		[Fact]
 		public void AgencyFileIsNotEmpty()
 		{
-			using (TextReader textReader = GetAgencyTextReader())
+			using (TextReader textReader = GetTextReader())
 			{
 				IEnumerable<Agency> agencies = _agencyParserFixture.Parser.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
@@ -44,7 +43,7 @@ namespace Project.GtfsNet.Test.Tests
 		[Fact]
 		public void CheckAgencyDataIsParsedCorrectly()
 		{
-			using (TextReader textReader = GetAgencyTextReader())
+			using (TextReader textReader = GetTextReader())
 			{
 				IEnumerable<Agency> agencies = _agencyParserFixture.Parser.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
@@ -58,11 +57,6 @@ namespace Project.GtfsNet.Test.Tests
 				Assert.Equal("http://web.mta.info/lirr", agency.Url);
 				Assert.Null(agency.FareUrl);
 			}
-		}
-
-		public TextReader GetAgencyTextReader()
-		{
-			return File.OpenText(PATH);
 		}
 	}
 }
