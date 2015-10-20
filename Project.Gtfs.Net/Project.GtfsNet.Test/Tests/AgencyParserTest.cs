@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Project.GtfsNet.Core;
-using Project.GtfsNet.Parsers;
+using Project.GtfsNet.Test.Fixtures;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests
 {
-	public class AgencyParserTest
+	public class AgencyParserTest : IClassFixture<AgencyParserFixture>
 	{
-		private readonly ITestOutputHelper _output;
 		private const string PATH = "feeds/subway/agency.txt";
-		private readonly AgencyParser _sut = new AgencyParser();
 
-		public AgencyParserTest(ITestOutputHelper output)
+		private readonly ITestOutputHelper _output;
+		private readonly AgencyParserFixture _agencyParserFixture;
+
+		public AgencyParserTest(ITestOutputHelper output, AgencyParserFixture agencyParserFixture)
 		{
 			_output = output;
+			_agencyParserFixture = agencyParserFixture;
 		}
 
 		[Fact]
 		public void EnsureThatParsingOnNullTextReaderThrowsException()
 		{
-			Assert.ThrowsAny<ArgumentNullException>(() => _sut.Parse(null));
+			Assert.ThrowsAny<ArgumentNullException>(() => _agencyParserFixture.Parser.Parse(null));
 		}
 
 		[Fact]
@@ -31,7 +33,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetAgencyTextReader())
 			{
-				IEnumerable<Agency> agencies = _sut.Parse(textReader);
+				IEnumerable<Agency> agencies = _agencyParserFixture.Parser.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
 
 				Assert.NotNull(agencyList);
@@ -44,7 +46,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetAgencyTextReader())
 			{
-				IEnumerable<Agency> agencies = _sut.Parse(textReader);
+				IEnumerable<Agency> agencies = _agencyParserFixture.Parser.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
 
 				Agency agency = agencyList[0];
