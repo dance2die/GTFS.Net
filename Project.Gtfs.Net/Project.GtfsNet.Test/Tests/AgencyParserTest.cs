@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Project.GtfsNet.Entities;
-using Project.GtfsNet.Test.Fixtures;
+using Project.GtfsNet.Entities.Maps;
+using Project.GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests
 {
-	public class AgencyParserTest :  ParserTestBase, IClassFixture<AgencyParserFixture>
+	public class AgencyParserTest :  ParserTestBase
 	{
 		public override string TestFilePath { get; } = "feeds/subway/agency.txt";
 
-		private readonly AgencyParserFixture _agencyParserFixture;
+		public EntitiesParser<Agency, AgencyMap> _parser = new EntitiesParser<Agency, AgencyMap>();
 
-		public AgencyParserTest(ITestOutputHelper output, AgencyParserFixture agencyParserFixture)
+		public AgencyParserTest(ITestOutputHelper output)
 		{
 			_output = output;
-			_agencyParserFixture = agencyParserFixture;
 		}
 
 		[Fact]
 		public void EnsureThatParsingOnNullTextReaderThrowsException()
 		{
-			Assert.ThrowsAny<ArgumentNullException>(() => _agencyParserFixture.Parser.Parse(null));
+			Assert.ThrowsAny<ArgumentNullException>(() => _parser.Parse(null));
 		}
 
 		[Fact]
@@ -32,7 +32,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Agency> agencies = _agencyParserFixture.Parser.Parse(textReader);
+				IEnumerable<Agency> agencies = _parser.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
 
 				Assert.NotNull(agencyList);
@@ -45,7 +45,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Agency> agencies = _agencyParserFixture.Parser.Parse(textReader);
+				IEnumerable<Agency> agencies = _parser.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
 
 				Agency agency = agencyList[0];

@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Project.GtfsNet.Entities;
+using Project.GtfsNet.Entities.Maps;
+using Project.GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests
 {
-	public class StopsParserTest : ParserTestBase, IClassFixture<StopsParserFixture>
+	public class StopsParserTest : ParserTestBase
 	{
-		private readonly StopsParserFixture _stopsParserFixture;
-
 		public override string TestFilePath { get; } = "feeds/subway/stops.txt";
 
-		public StopsParserTest(ITestOutputHelper output, StopsParserFixture stopsParserFixture)
+		public EntitiesParser<Stops,StopsMap> _parser = new EntitiesParser<Stops, StopsMap>();
+
+		public StopsParserTest(ITestOutputHelper output)
 		{
-			_stopsParserFixture = stopsParserFixture;
 			_output = output;
 		}
 
 		[Fact]
 		public void EnsureThatParsingOnNullTextReaderThrowsException()
 		{
-			Assert.Throws<ArgumentNullException>(() => _stopsParserFixture.Parser.Parse(null));
+			Assert.Throws<ArgumentNullException>(() => _parser.Parse(null));
 		}
 
 		[Fact]
@@ -31,7 +32,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Stops> stops = _stopsParserFixture.Parser.Parse(textReader);
+				IEnumerable<Stops> stops = _parser.Parse(textReader);
 				List<Stops> stopsList = stops.ToList();
 
 				Assert.NotNull(stopsList);
@@ -44,7 +45,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Stops> stops = _stopsParserFixture.Parser.Parse(textReader);
+				IEnumerable<Stops> stops = _parser.Parse(textReader);
 				List<Stops> stopsList = stops.ToList();
 
 				Stops stopsItem = stopsList[0];
