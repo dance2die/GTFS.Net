@@ -74,6 +74,7 @@
     <Compile Include="Fixtures\AgencyParserFixture.cs" />
     <Compile Include="Tests\AgencyParserTest.cs" />
     <Compile Include="Tests\ParserTestBase.cs" />
+    <Compile Include="Fixtures\StopsParserFixture.cs" />
     <Compile Include="Tests\StopsParserTest.cs" />
   </ItemGroup>
   <ItemGroup>

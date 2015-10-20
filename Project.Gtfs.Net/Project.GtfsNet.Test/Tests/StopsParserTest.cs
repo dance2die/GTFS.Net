@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Project.GtfsNet.Core;
-using Project.GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests
 {
-	public class StopsParserTest : ParserTestBase
+	public class StopsParserTest : ParserTestBase, IClassFixture<StopsParserFixture>
 	{
-		private readonly StopsParser _sut = new StopsParser();
+		private readonly StopsParserFixture _stopsParserFixture;
 
 		public override string TestFilePath { get; } = "feeds/subway/stops.txt";
 
-		public StopsParserTest(ITestOutputHelper output)
+		public StopsParserTest(ITestOutputHelper output, StopsParserFixture stopsParserFixture)
 		{
+			_stopsParserFixture = stopsParserFixture;
 			_output = output;
 		}
 
 		[Fact]
 		public void EnsureThatParsingOnNullTextReaderThrowsException()
 		{
-			Assert.Throws<ArgumentNullException>(() => _sut.Parse(null));
+			Assert.Throws<ArgumentNullException>(() => _stopsParserFixture.Parser.Parse(null));
 		}
 
 		[Fact]
@@ -31,7 +31,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Stops> stops = _sut.Parse(textReader);
+				IEnumerable<Stops> stops = _stopsParserFixture.Parser.Parse(textReader);
 				List<Stops> stopsList = stops.ToList();
 
 				Assert.NotNull(stopsList);
@@ -44,7 +44,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Stops> stops = _sut.Parse(textReader);
+				IEnumerable<Stops> stops = _stopsParserFixture.Parser.Parse(textReader);
 				List<Stops> stopsList = stops.ToList();
 
 				Stops stopsItem = stopsList[0];
