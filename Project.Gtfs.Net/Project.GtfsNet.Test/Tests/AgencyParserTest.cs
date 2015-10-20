@@ -13,6 +13,7 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		private readonly ITestOutputHelper _output;
 		private const string PATH = "feeds/subway/agency.txt";
+		private readonly AgencyParser _sut = new AgencyParser();
 
 		public AgencyParserTest(ITestOutputHelper output)
 		{
@@ -22,19 +23,15 @@ namespace Project.GtfsNet.Test.Tests
 		[Fact]
 		public void EnsureThatParsingOnNullTextReaderThrowsException()
 		{
-			var sut = new AgencyParser();
-
-			Assert.ThrowsAny<ArgumentNullException>(() => sut.Parse(null));
+			Assert.ThrowsAny<ArgumentNullException>(() => _sut.Parse(null));
 		}
 
 		[Fact]
 		public void AgencyFileIsNotEmpty()
 		{
-			var sut = new AgencyParser();
-
 			using (TextReader textReader = GetAgencyTextReader())
 			{
-				IEnumerable<Agency> agencies = sut.Parse(textReader);
+				IEnumerable<Agency> agencies = _sut.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
 
 				Assert.NotNull(agencyList);
@@ -45,11 +42,9 @@ namespace Project.GtfsNet.Test.Tests
 		[Fact]
 		public void CheckAgencyDataIsParsedCorrectly()
 		{
-			var sut = new AgencyParser();
-
 			using (TextReader textReader = GetAgencyTextReader())
 			{
-				IEnumerable<Agency> agencies = sut.Parse(textReader);
+				IEnumerable<Agency> agencies = _sut.Parse(textReader);
 				List<Agency> agencyList = agencies.ToList();
 
 				Agency agency = agencyList[0];
