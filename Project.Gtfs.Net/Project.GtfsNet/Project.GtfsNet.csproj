@@ -51,7 +51,9 @@
   <ItemGroup>
     <Compile Include="Core\Agency.cs" />
     <Compile Include="Core\Maps\AgencyMap.cs" />
+    <Compile Include="Core\Stops.cs" />
     <Compile Include="Parsers\AgencyParser.cs" />
+    <Compile Include="Parsers\StopsParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
