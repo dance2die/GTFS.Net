@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Project.GtfsNet.Enums;
 
-namespace Project.GtfsNet.Core
+namespace Project.GtfsNet.Entities
 {
 	/// <summary>
 	/// Holds information of a row in stop.txt

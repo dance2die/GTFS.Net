@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Project.GtfsNet.Core;
+using Project.GtfsNet.Entities;
 using Project.GtfsNet.Test.Fixtures;
 using Xunit;
 using Xunit.Abstractions;

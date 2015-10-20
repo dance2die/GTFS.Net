@@ -2,8 +2,8 @@
 using System.IO;
 using CsvHelper;
 using EnsureThat;
-using Project.GtfsNet.Core;
-using Project.GtfsNet.Core.Maps;
+using Project.GtfsNet.Entities;
+using Project.GtfsNet.Entities.Maps;
 
 namespace Project.GtfsNet.Parsers
 {

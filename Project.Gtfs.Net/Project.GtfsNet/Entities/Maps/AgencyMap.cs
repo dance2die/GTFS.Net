@@ -1,6 +1,6 @@
 using CsvHelper.Configuration;
 
-namespace Project.GtfsNet.Core.Maps
+namespace Project.GtfsNet.Entities.Maps
 {
 	public class AgencyMap : CsvClassMap<Agency>
 	{

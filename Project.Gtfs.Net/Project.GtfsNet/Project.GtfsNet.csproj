@@ -49,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Agency.cs" />
-    <Compile Include="Core\Maps\AgencyMap.cs" />
-    <Compile Include="Core\Maps\StopsMap.cs" />
-    <Compile Include="Core\Stops.cs" />
+    <Compile Include="Entities\Agency.cs" />
+    <Compile Include="Entities\Maps\AgencyMap.cs" />
+    <Compile Include="Entities\Maps\StopsMap.cs" />
+    <Compile Include="Entities\Stops.cs" />
     <Compile Include="Enums\LocationType.cs" />
     <Compile Include="Parsers\AgencyParser.cs" />
     <Compile Include="Parsers\StopsParser.cs" />
