@@ -54,9 +54,7 @@
     <Compile Include="Entities\Maps\StopsMap.cs" />
     <Compile Include="Entities\Stops.cs" />
     <Compile Include="Enums\LocationType.cs" />
-    <Compile Include="Parsers\AgencyParser.cs" />
     <Compile Include="Parsers\EntitiesParser.cs" />
-    <Compile Include="Parsers\StopsParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
