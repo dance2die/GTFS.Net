@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Agency.cs" />
+    <Compile Include="Entities\Maps\StopTimesMap.cs" />
+    <Compile Include="Enums\DropOffType.cs" />
     <Compile Include="Entities\Maps\TripsMap.cs" />
+    <Compile Include="Enums\PickupType.cs" />
+    <Compile Include="Entities\StopTimes.cs" />
     <Compile Include="Enums\WheelchairAccessibilityType.cs" />
     <Compile Include="Enums\DirectionType.cs" />
     <Compile Include="Entities\Maps\AgencyMap.cs" />

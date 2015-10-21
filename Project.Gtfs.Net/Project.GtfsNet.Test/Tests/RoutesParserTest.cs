@@ -35,7 +35,7 @@ namespace Project.GtfsNet.Test.Tests
 		}
 
 		[Fact]
-		public void CheckAgencyDataIsParsedCorrectly()
+		public void CheckDataIsParsedCorrectly()
 		{
 			using (TextReader textReader = GetTextReader())
 			{
