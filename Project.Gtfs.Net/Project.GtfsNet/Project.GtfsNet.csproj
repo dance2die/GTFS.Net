@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Agency.cs" />
+    <Compile Include="Entities\Calendar.cs" />
+    <Compile Include="Entities\Maps\CalendarMap.cs" />
     <Compile Include="Entities\Maps\StopTimesMap.cs" />
     <Compile Include="Enums\DropOffType.cs" />
     <Compile Include="Entities\Maps\TripsMap.cs" />

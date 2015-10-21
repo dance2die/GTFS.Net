@@ -14,7 +14,7 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		public override string TestFilePath { get; } = "feeds/subway/agency.txt";
 
-		public EntitiesParser<Agency, AgencyMap> _parser = new EntitiesParser<Agency, AgencyMap>();
+		private readonly EntitiesParser<Agency, AgencyMap> _parser = new EntitiesParser<Agency, AgencyMap>();
 
 		public AgencyParserTest(ITestOutputHelper output)
 		{
