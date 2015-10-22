@@ -146,5 +146,16 @@ namespace Project.GtfsNet.Test.Tests
 			Assert.True(typeof (Transfers).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (TransfersMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
+
+		[Fact]
+		public void GetTripsParser()
+		{
+			var sut = new EntityParserFactory();
+
+			var parser = sut.Create("trips.txt");
+
+			Assert.True(typeof (Trips).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (TripsMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
+		}
 	}
 }
