@@ -124,5 +124,16 @@ namespace Project.GtfsNet.Test.Tests
 			Assert.True(typeof (StopTimes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (StopTimesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
+
+		[Fact]
+		public void GetStopsParser()
+		{
+			var sut = new EntityParserFactory();
+
+			var parser = sut.Create("stops.txt");
+
+			Assert.True(typeof (Stops).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (StopsMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
+		}
 	}
 }
