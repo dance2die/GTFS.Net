@@ -33,6 +33,8 @@ namespace Project.GtfsNet.Parsers
 					return new EntityParser<Routes, RoutesMap>();
 				case "shapes.txt":
 					return new EntityParser<Shapes, ShapesMap>();
+				case "stop_times.txt":
+					return new EntityParser<StopTimes, StopTimesMap>();
 			}
 
 			throw new ArgumentException();
