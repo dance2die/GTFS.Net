@@ -58,5 +58,16 @@ namespace Project.GtfsNet.Test.Tests
 			Assert.True(typeof (FareAttributes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FareAttributesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
+
+		[Fact]
+		public void GetFareRulesParser()
+		{
+			var sut = new EntityParserFactory();
+
+			var parser = sut.Create("fare_rules.txt");
+
+			Assert.True(typeof (FareRules).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (FareRulesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
+		}
 	}
 }

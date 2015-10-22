@@ -23,6 +23,8 @@ namespace Project.GtfsNet.Parsers
 					return new EntityParser<CalendarDates, CalendarDatesMap>();
 				case "fare_attributes.txt":
 					return new EntityParser<FareAttributes, FareAttributesMap>();
+				case "fare_rules.txt":
+					return new EntityParser<FareRules, FareRulesMap>();
 			}
 
 			throw new ArgumentException();
