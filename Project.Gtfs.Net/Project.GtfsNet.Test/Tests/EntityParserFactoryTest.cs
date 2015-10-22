@@ -102,5 +102,16 @@ namespace Project.GtfsNet.Test.Tests
 			Assert.True(typeof (Routes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (RoutesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
+
+		[Fact]
+		public void GetShapesParser()
+		{
+			var sut = new EntityParserFactory();
+
+			var parser = sut.Create("shapes.txt");
+
+			Assert.True(typeof (Shapes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (ShapesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
+		}
 	}
 }

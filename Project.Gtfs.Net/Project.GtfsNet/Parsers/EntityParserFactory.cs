@@ -31,6 +31,8 @@ namespace Project.GtfsNet.Parsers
 					return new EntityParser<Frequencies, FrequenciesMap>();
 				case "routes.txt":
 					return new EntityParser<Routes, RoutesMap>();
+				case "shapes.txt":
+					return new EntityParser<Shapes, ShapesMap>();
 			}
 
 			throw new ArgumentException();
