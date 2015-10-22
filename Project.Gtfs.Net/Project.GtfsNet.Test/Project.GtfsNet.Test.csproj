@@ -79,6 +79,7 @@
     <Compile Include="Tests\FareRulesParserTest.cs" />
     <Compile Include="Tests\ParserTestBase.cs" />
     <Compile Include="Tests\RoutesParserTest.cs" />
+    <Compile Include="Tests\ShapesParserTest.cs" />
     <Compile Include="Tests\StopsParserTest.cs" />
     <Compile Include="Tests\StopTimesParser.cs" />
     <Compile Include="Tests\TripsParserTest.cs" />
