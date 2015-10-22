@@ -13,9 +13,12 @@ namespace Project.GtfsNet.Parsers
 			Ensure.That(filePath).IsNotNullOrWhiteSpace();
 
 			string fileName = Path.GetFileName(filePath);
-			if (fileName == "agency.txt")
+			switch (fileName)
 			{
-				return new EntityParser<Agency, AgencyMap>();
+				case "agency.txt":
+					return new EntityParser<Agency, AgencyMap>();
+				case "calendar.txt":
+					return new EntityParser<Calendar, CalendarMap>();
 			}
 
 			throw new ArgumentException();
