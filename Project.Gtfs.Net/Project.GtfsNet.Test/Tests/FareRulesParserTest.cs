@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Project.GtfsNet.Entities;
 using Project.GtfsNet.Entities.Maps;
-using Project.GtfsNet.Enums;
 using Project.GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
