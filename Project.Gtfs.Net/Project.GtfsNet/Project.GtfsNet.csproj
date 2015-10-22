@@ -54,9 +54,11 @@
     <Compile Include="Entities\CalendarDates.cs" />
     <Compile Include="Entities\FareAttributes.cs" />
     <Compile Include="Entities\FareRules.cs" />
+    <Compile Include="Entities\FeedInfo.cs" />
     <Compile Include="Entities\Frequencies.cs" />
     <Compile Include="Entities\Maps\FareAttributesMap.cs" />
     <Compile Include="Entities\Maps\FareRulesMap.cs" />
+    <Compile Include="Entities\Maps\FeedInfoMap.cs" />
     <Compile Include="Entities\Maps\FrequenciesMap.cs" />
     <Compile Include="Entities\Maps\ShapesMap.cs" />
     <Compile Include="Entities\Maps\TransfersMap.cs" />
