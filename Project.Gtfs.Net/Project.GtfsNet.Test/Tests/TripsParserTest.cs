@@ -22,7 +22,7 @@ namespace Project.GtfsNet.Test.Tests
 		}
 
 		[Fact]
-		public void StopsFileIsNotEmpty()
+		public void FileIsNotEmpty()
 		{
 			using (TextReader textReader = GetTextReader())
 			{

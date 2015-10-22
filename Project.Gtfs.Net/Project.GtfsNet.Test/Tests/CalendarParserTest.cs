@@ -22,7 +22,7 @@ namespace Project.GtfsNet.Test.Tests
 		}
 
 		[Fact]
-		public void AgencyFileIsNotEmpty()
+		public void FileIsNotEmpty()
 		{
 			using (TextReader textReader = GetTextReader())
 			{

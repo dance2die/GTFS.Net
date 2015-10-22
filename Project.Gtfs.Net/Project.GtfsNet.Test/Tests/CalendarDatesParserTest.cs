@@ -23,15 +23,15 @@ namespace Project.GtfsNet.Test.Tests
 		}
 
 		[Fact]
-		public void AgencyFileIsNotEmpty()
+		public void FileIsNotEmpty()
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<CalendarDates> agencies = _parser.Parse(textReader);
-				List<CalendarDates> agencyList = agencies.ToList();
+				IEnumerable<CalendarDates> parsed = _parser.Parse(textReader);
+				List<CalendarDates> parsedList = parsed.ToList();
 
-				Assert.NotNull(agencyList);
-				Assert.True(agencyList.Any());
+				Assert.NotNull(parsedList);
+				Assert.True(parsedList.Any());
 			}
 		}
 
@@ -40,10 +40,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<CalendarDates> agencies = _parser.Parse(textReader);
-				List<CalendarDates> agencyList = agencies.ToList();
+				IEnumerable<CalendarDates> parsed = _parser.Parse(textReader);
+				List<CalendarDates> parsedList = parsed.ToList();
 
-				CalendarDates item = agencyList[0];
+				CalendarDates item = parsedList[0];
 
 				Assert.Equal(new DateTime(2015, 10, 24), item.Date);
 				Assert.Equal(ExceptionType.Removed, item.ExceptionType);
