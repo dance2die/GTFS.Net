@@ -13,7 +13,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class CalendarDatesParserTest : ParserTestBase
 	{
-		private readonly EntitiesParser<CalendarDates, CalendarDatesMap> _parser = new EntitiesParser<CalendarDates, CalendarDatesMap>();
+		private readonly EntityParser<CalendarDates, CalendarDatesMap> _parser = new EntityParser<CalendarDates, CalendarDatesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/calendar_dates.txt";
 

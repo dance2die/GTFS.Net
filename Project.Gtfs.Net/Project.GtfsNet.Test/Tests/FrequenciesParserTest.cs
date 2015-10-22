@@ -11,7 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class FrequenciesParserTest : ParserTestBase
 	{
-		private readonly EntitiesParser<Frequencies, FrequenciesMap> _parser = new EntitiesParser<Frequencies, FrequenciesMap>();
+		private readonly EntityParser<Frequencies, FrequenciesMap> _parser = new EntityParser<Frequencies, FrequenciesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/frequencies.txt";
 

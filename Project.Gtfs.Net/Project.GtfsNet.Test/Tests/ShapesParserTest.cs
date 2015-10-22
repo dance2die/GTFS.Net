@@ -11,7 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class ShapesParserTest : ParserTestBase
 	{
-		private readonly EntitiesParser<Shapes, ShapesMap> _parser = new EntitiesParser<Shapes, ShapesMap>();
+		private readonly EntityParser<Shapes, ShapesMap> _parser = new EntityParser<Shapes, ShapesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/shapes.txt";
 

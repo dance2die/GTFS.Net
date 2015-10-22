@@ -11,7 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class FeedInfoParserTest : ParserTestBase
 	{
-		private readonly EntitiesParser<FeedInfo, FeedInfoMap> _parser = new EntitiesParser<FeedInfo, FeedInfoMap>();
+		private readonly EntityParser<FeedInfo, FeedInfoMap> _parser = new EntityParser<FeedInfo, FeedInfoMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/feed_info.txt";
 

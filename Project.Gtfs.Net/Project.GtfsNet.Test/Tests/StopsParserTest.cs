@@ -14,7 +14,7 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		public override string TestFilePath { get; } = "feeds/subway/stops.txt";
 
-		public EntitiesParser<Stops,StopsMap> _parser = new EntitiesParser<Stops, StopsMap>();
+		public EntityParser<Stops,StopsMap> _parser = new EntityParser<Stops, StopsMap>();
 
 		public StopsParserTest(ITestOutputHelper output)
 		{

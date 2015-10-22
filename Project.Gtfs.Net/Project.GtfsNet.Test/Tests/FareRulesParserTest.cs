@@ -11,7 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class FareRulesParserTest : ParserTestBase
 	{
-		private readonly EntitiesParser<FareRules, FareRulesMap> _parser = new EntitiesParser<FareRules, FareRulesMap>();
+		private readonly EntityParser<FareRules, FareRulesMap> _parser = new EntityParser<FareRules, FareRulesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/fare_rules.txt";
 

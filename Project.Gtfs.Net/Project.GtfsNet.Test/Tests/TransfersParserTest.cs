@@ -12,7 +12,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class TransfersParserTest : ParserTestBase
 	{
-		private readonly EntitiesParser<Transfers, TransfersMap> _parser = new EntitiesParser<Transfers, TransfersMap>();
+		private readonly EntityParser<Transfers, TransfersMap> _parser = new EntityParser<Transfers, TransfersMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/transfers.txt";
 

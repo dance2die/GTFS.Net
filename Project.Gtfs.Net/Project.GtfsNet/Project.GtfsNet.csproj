@@ -85,7 +85,7 @@
     <Compile Include="Entities\Stops.cs" />
     <Compile Include="Enums\LocationType.cs" />
     <Compile Include="Parsers\DateTimeParser.cs" />
-    <Compile Include="Parsers\EntitiesParser.cs" />
+    <Compile Include="Parsers\EntityParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
