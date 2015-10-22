@@ -9,13 +9,13 @@ using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests
 {
-	public class ShapesParserTestt : ParserTestBase
+	public class ShapesParserTest : ParserTestBase
 	{
 		private readonly EntitiesParser<Shapes, ShapesMap> _parser = new EntitiesParser<Shapes, ShapesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/shapes.txt";
 
-		public ShapesParserTestt(ITestOutputHelper output)
+		public ShapesParserTest(ITestOutputHelper output)
 		{
 			_output = output;
 		}
@@ -30,6 +30,7 @@ namespace Project.GtfsNet.Test.Tests
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
+				Assert.Equal(183725, parsedList.Count);
 			}
 		}
 
