@@ -59,7 +59,10 @@
     <Compile Include="Entities\Maps\FareRulesMap.cs" />
     <Compile Include="Entities\Maps\FrequenciesMap.cs" />
     <Compile Include="Entities\Maps\ShapesMap.cs" />
+    <Compile Include="Entities\Maps\TransfersMap.cs" />
     <Compile Include="Entities\Shapes.cs" />
+    <Compile Include="Entities\Transfers.cs" />
+    <Compile Include="Enums\TransferType.cs" />
     <Compile Include="Enums\PaymentMethodType.cs" />
     <Compile Include="Enums\ExceptionType.cs" />
     <Compile Include="Entities\Maps\CalendarDatesMap.cs" />
