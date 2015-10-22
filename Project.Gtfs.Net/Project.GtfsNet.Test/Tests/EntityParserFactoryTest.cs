@@ -20,7 +20,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("agency.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Agency);
 
 			Assert.True(typeof (Agency).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (AgencyMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -31,7 +31,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("calendar.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Calendar);
 
 			Assert.True(typeof (Calendar).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (CalendarMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -42,7 +42,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("calendar_dates.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.CalendarDates);
 
 			Assert.True(typeof (CalendarDates).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (CalendarDatesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -53,7 +53,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("fare_attributes.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.FareAttributes);
 
 			Assert.True(typeof (FareAttributes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FareAttributesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -64,7 +64,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("fare_rules.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.FareRules);
 
 			Assert.True(typeof (FareRules).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FareRulesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -75,7 +75,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("feed_info.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.FeedInfo);
 
 			Assert.True(typeof (FeedInfo).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FeedInfoMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -86,7 +86,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("frequencies.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Frequencies);
 
 			Assert.True(typeof (Frequencies).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FrequenciesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -97,7 +97,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("routes.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Routes);
 
 			Assert.True(typeof (Routes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (RoutesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -108,7 +108,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("shapes.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Shapes);
 
 			Assert.True(typeof (Shapes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (ShapesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -119,7 +119,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("stop_times.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.StopTimes);
 
 			Assert.True(typeof (StopTimes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (StopTimesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -130,7 +130,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("stops.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Stops);
 
 			Assert.True(typeof (Stops).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (StopsMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -141,7 +141,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("transfers.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Transfers);
 
 			Assert.True(typeof (Transfers).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (TransfersMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
@@ -152,7 +152,7 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			var sut = new EntityParserFactory();
 
-			var parser = sut.Create("trips.txt");
+			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Trips);
 
 			Assert.True(typeof (Trips).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (TripsMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));

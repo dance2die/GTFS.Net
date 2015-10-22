@@ -15,35 +15,52 @@ namespace Project.GtfsNet.Parsers
 			string fileName = Path.GetFileName(filePath);
 			switch (fileName)
 			{
-				case "agency.txt":
+				case SupportedFileNames.Agency:
 					return new EntityParser<Agency, AgencyMap>();
-				case "calendar.txt":
+				case SupportedFileNames.Calendar:
 					return new EntityParser<Calendar, CalendarMap>();
-				case "calendar_dates.txt":
+				case SupportedFileNames.CalendarDates:
 					return new EntityParser<CalendarDates, CalendarDatesMap>();
-				case "fare_attributes.txt":
+				case SupportedFileNames.FareAttributes:
 					return new EntityParser<FareAttributes, FareAttributesMap>();
-				case "fare_rules.txt":
+				case SupportedFileNames.FareRules:
 					return new EntityParser<FareRules, FareRulesMap>();
-				case "feed_info.txt":
+				case SupportedFileNames.FeedInfo:
 					return new EntityParser<FeedInfo, FeedInfoMap>();
-				case "frequencies.txt":
+				case SupportedFileNames.Frequencies:
 					return new EntityParser<Frequencies, FrequenciesMap>();
-				case "routes.txt":
+				case SupportedFileNames.Routes:
 					return new EntityParser<Routes, RoutesMap>();
-				case "shapes.txt":
+				case SupportedFileNames.Shapes:
 					return new EntityParser<Shapes, ShapesMap>();
-				case "stop_times.txt":
+				case SupportedFileNames.StopTimes:
 					return new EntityParser<StopTimes, StopTimesMap>();
-				case "stops.txt":
+				case SupportedFileNames.Stops:
 					return new EntityParser<Stops, StopsMap>();
-				case "transfers.txt":
+				case SupportedFileNames.Transfers:
 					return new EntityParser<Transfers, TransfersMap>();
-				case "trips.txt":
+				case SupportedFileNames.Trips:
 					return new EntityParser<Trips, TripsMap>();
 				default:
 					throw new ArgumentException();
 			}
+		}
+
+		public static class SupportedFileNames
+		{
+			public const string Agency = "agency.txt";
+			public const string Calendar = "calendar.txt";
+			public const string CalendarDates = "calendar_dates.txt";
+			public const string FareAttributes = "fare_attributes.txt";
+			public const string FareRules = "fare_rules.txt";
+			public const string FeedInfo = "feed_info.txt";
+			public const string Frequencies = "frequencies.txt";
+			public const string Routes = "routes.txt";
+			public const string Shapes = "shapes.txt";
+			public const string StopTimes = "stop_times.txt";
+			public const string Stops = "stops.txt";
+			public const string Transfers = "transfers.txt";
+			public const string Trips = "trips.txt";
 		}
 	}
 }
