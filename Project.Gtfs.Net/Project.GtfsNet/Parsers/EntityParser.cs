@@ -6,7 +6,7 @@ using EnsureThat;
 
 namespace Project.GtfsNet.Parsers
 {
-	public class EntityParser<TEntity, TEntityMap> where TEntityMap : CsvClassMap
+	public class EntityParser<TEntity, TEntityMap> : IEntityParser<TEntity> where TEntityMap : CsvClassMap
 	{
 		public IEnumerable<TEntity> Parse(TextReader textReader)
 		{

@@ -10,7 +10,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Calendar.cs
 	/// </remarks>
-	public class Calendar
+	public class Calendar : IEntity
 	{
 		[Required]
 		public string ServiceId { get; set; }

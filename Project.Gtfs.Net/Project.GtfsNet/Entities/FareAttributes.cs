@@ -32,7 +32,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/226a247861cf90badde49655095193ac829cf227/GTFS/Entities/FareAttribute.cs
 	/// </remarks>
-	public class FareAttributes
+	public class FareAttributes : IEntity
 	{
 		[Required]
 		public string FareId { get; set; }

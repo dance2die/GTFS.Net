@@ -3,7 +3,7 @@ using Project.GtfsNet.Enums;
 
 namespace Project.GtfsNet.Entities
 {
-	public class Routes
+	public class Routes : IEntity
 	{
 		[Required]
 		public string Id { get; set; }

@@ -32,7 +32,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Transfers.cs
 	/// </remarks>
-	public class Transfers
+	public class Transfers : IEntity
 	{
 		/// <summary>
 		/// Gets or sets a stop or station where a connection between routes begins.

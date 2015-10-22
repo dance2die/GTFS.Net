@@ -7,7 +7,7 @@ namespace Project.GtfsNet.Entities
 	/// <remarks>
 	/// https://github.com/OsmSharp/GTFS/blob/226a247861cf90badde49655095193ac829cf227/GTFS/Entities/CalendarDate.cs
 	/// </remarks>
-	public class CalendarDates
+	public class CalendarDates : IEntity
 	{
 		[Required]
 		public string ServiceId { get; set; }

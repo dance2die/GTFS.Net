@@ -31,7 +31,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/FeedInfo.cs
 	/// </remarks>
-	public class FeedInfo
+	public class FeedInfo : IEntity
 	{
 		/// <summary>
 		/// Gets or sets the full name of the organization that publishes the feed. (This may be the same as one of the agency_name values in agency.txt.) GTFS-consuming applications can display this name when giving attribution for a particular feed's data.

@@ -3,7 +3,7 @@ using Project.GtfsNet.Enums;
 
 namespace Project.GtfsNet.Entities
 {
-	public class StopTimes
+	public class StopTimes : IEntity
 	{
 		[Required]
 		public string TripId { get; set; }

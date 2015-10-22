@@ -9,7 +9,7 @@ namespace Project.GtfsNet.Entities
 	/// <remarks>
 	/// Copied from "https://github.com/OsmSharp/GTFS/blob/2b8f3201e65ab5dd31cdacd82b4b05d34c288204/GTFS/Entities/Stop.cs"
 	/// </remarks>
-	public class Stops
+	public class Stops : IEntity
 	{
 		[Required]
 		public string Id { get; set; }

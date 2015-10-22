@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Project.GtfsNet.Entities;
+﻿using Project.GtfsNet.Entities;
 using Project.GtfsNet.Entities.Maps;
 using Project.GtfsNet.Parsers;
 using Xunit;
@@ -23,20 +18,12 @@ namespace Project.GtfsNet.Test.Tests
 		[Fact]
 		public void GetAgencyParser()
 		{
-			//var sut = new EntityParserFactory();
+			var sut = new EntityParserFactory();
 
-			//var parser = sut.Create("agency.txt");
+			var parser = sut.Create("agency.txt");
+
+			Assert.True(typeof (Agency).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (AgencyMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 	}
-
-	//public class EntityParserFactory
-	//{
-	//	public EntityParser<TEntity, TEntityMap> Create(string fileName)
-	//	{
-	//		if (fileName == "agency.txt")
-	//		{
-	//			return new EntityParser<Agency, AgencyMap>();
-	//		}
-	//	}
-	//}
 }
