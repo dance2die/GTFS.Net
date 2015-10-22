@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\Calendar.cs" />
+    <Compile Include="Entities\CalendarDates.cs" />
+    <Compile Include="Enums\ExceptionType.cs" />
+    <Compile Include="Entities\Maps\CalendarDatesMap.cs" />
     <Compile Include="Entities\Maps\CalendarMap.cs" />
     <Compile Include="Entities\Maps\StopTimesMap.cs" />
     <Compile Include="Enums\DropOffType.cs" />
@@ -67,6 +70,7 @@
     <Compile Include="Enums\RouteType.cs" />
     <Compile Include="Entities\Stops.cs" />
     <Compile Include="Enums\LocationType.cs" />
+    <Compile Include="Parsers\DateTimeParser.cs" />
     <Compile Include="Parsers\EntitiesParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
