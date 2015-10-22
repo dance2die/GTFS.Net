@@ -19,6 +19,8 @@ namespace Project.GtfsNet.Parsers
 					return new EntityParser<Agency, AgencyMap>();
 				case "calendar.txt":
 					return new EntityParser<Calendar, CalendarMap>();
+				case "calendar_dates.txt":
+					return new EntityParser<CalendarDates, CalendarDatesMap>();
 			}
 
 			throw new ArgumentException();

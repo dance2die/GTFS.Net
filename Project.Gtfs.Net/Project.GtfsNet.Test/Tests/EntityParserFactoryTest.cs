@@ -36,5 +36,16 @@ namespace Project.GtfsNet.Test.Tests
 			Assert.True(typeof (Calendar).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (CalendarMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
+
+		[Fact]
+		public void GetCalendarDatesParser()
+		{
+			var sut = new EntityParserFactory();
+
+			var parser = sut.Create("calendar_dates.txt");
+
+			Assert.True(typeof (CalendarDates).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (CalendarDatesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
+		}
 	}
 }
