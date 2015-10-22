@@ -91,5 +91,16 @@ namespace Project.GtfsNet.Test.Tests
 			Assert.True(typeof (Frequencies).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FrequenciesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
+
+		[Fact]
+		public void GetRoutesParser()
+		{
+			var sut = new EntityParserFactory();
+
+			var parser = sut.Create("routes.txt");
+
+			Assert.True(typeof (Routes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (RoutesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
+		}
 	}
 }
