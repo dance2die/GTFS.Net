@@ -76,6 +76,7 @@
     <Compile Include="Tests\CalendarParserTest.cs" />
     <Compile Include="Tests\DateTimeParserTest.cs" />
     <Compile Include="Tests\FareAttribributesParserTest.cs" />
+    <Compile Include="Tests\FareRulesParserTest.cs" />
     <Compile Include="Tests\ParserTestBase.cs" />
     <Compile Include="Tests\RoutesParserTest.cs" />
     <Compile Include="Tests\StopsParserTest.cs" />

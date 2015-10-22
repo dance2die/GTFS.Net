@@ -53,7 +53,9 @@
     <Compile Include="Entities\Calendar.cs" />
     <Compile Include="Entities\CalendarDates.cs" />
     <Compile Include="Entities\FareAttributes.cs" />
+    <Compile Include="Entities\FareRules.cs" />
     <Compile Include="Entities\Maps\FareAttributesMap.cs" />
+    <Compile Include="Entities\Maps\FareRulesMap.cs" />
     <Compile Include="Enums\PaymentMethodType.cs" />
     <Compile Include="Enums\ExceptionType.cs" />
     <Compile Include="Entities\Maps\CalendarDatesMap.cs" />
