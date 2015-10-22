@@ -32,11 +32,12 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Stops> stops = _parser.Parse(textReader);
-				List<Stops> stopsList = stops.ToList();
+				IEnumerable<Stops> parsed = _parser.Parse(textReader);
+				List<Stops> parsedList = parsed.ToList();
 
-				Assert.NotNull(stopsList);
-				Assert.True(stopsList.Any());
+				Assert.NotNull(parsedList);
+				Assert.True(parsedList.Any());
+				Assert.Equal(124, parsedList.Count);
 			}
 		}
 

@@ -26,11 +26,12 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Calendar> agencies = _parser.Parse(textReader);
-				List<Calendar> agencyList = agencies.ToList();
+				IEnumerable<Calendar> parsed = _parser.Parse(textReader);
+				List<Calendar> parsedList = parsed.ToList();
 
-				Assert.NotNull(agencyList);
-				Assert.True(agencyList.Any());
+				Assert.NotNull(parsedList);
+				Assert.True(parsedList.Any());
+				Assert.Equal(10, parsedList.Count);
 			}
 		}
 

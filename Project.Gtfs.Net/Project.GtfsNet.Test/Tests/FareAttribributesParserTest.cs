@@ -31,6 +31,7 @@ namespace Project.GtfsNet.Test.Tests
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
+				Assert.Equal(2, parsedList.Count);
 			}
 		}
 
