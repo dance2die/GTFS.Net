@@ -25,6 +25,8 @@ namespace Project.GtfsNet.Parsers
 					return new EntityParser<FareAttributes, FareAttributesMap>();
 				case "fare_rules.txt":
 					return new EntityParser<FareRules, FareRulesMap>();
+				case "feed_info.txt":
+					return new EntityParser<FeedInfo, FeedInfoMap>();
 			}
 
 			throw new ArgumentException();
