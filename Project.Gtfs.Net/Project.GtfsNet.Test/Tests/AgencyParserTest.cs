@@ -52,7 +52,7 @@ namespace Project.GtfsNet.Test.Tests
 				IEnumerable<IEntity> agencies = _parser.Parse(textReader);
 				List<IEntity> agencyList = agencies.ToList();
 
-				dynamic agency = agencyList[0];
+				Agency agency = agencyList[0] as Agency;
 				Assert.Equal("LI", agency.Id);
 				Assert.Equal("en", agency.Language);
 				Assert.Equal("Long Island Rail Road", agency.Name);
