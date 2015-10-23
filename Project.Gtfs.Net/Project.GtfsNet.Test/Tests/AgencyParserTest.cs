@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,11 +15,13 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		public override string TestFilePath { get; } = "feeds/subway/agency.txt";
 
-		private readonly EntityParser<Agency, AgencyMap> _parser = new EntityParser<Agency, AgencyMap>();
+		//private readonly EntityParser<Agency, AgencyMap> _parser;
+		private readonly IEntityParser<IEntity> _parser;
 
 		public AgencyParserTest(ITestOutputHelper output)
 		{
 			_output = output;
+			_parser = new EntityParserFactory().Create(TestFilePath);
 		}
 
 		[Fact]
@@ -32,8 +35,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Agency> parsed = _parser.Parse(textReader);
-				List<Agency> parsedList = parsed.ToList();
+				IEnumerable<IEntity> parsed = _parser.Parse(textReader);
+				List<IEntity> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -46,10 +49,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Agency> agencies = _parser.Parse(textReader);
-				List<Agency> agencyList = agencies.ToList();
+				IEnumerable<IEntity> agencies = _parser.Parse(textReader);
+				List<IEntity> agencyList = agencies.ToList();
 
-				Agency agency = agencyList[0];
+				dynamic agency = agencyList[0];
 				Assert.Equal("LI", agency.Id);
 				Assert.Equal("en", agency.Language);
 				Assert.Equal("Long Island Rail Road", agency.Name);

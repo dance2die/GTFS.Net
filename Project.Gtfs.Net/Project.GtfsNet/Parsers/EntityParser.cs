@@ -1,25 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using CsvHelper;
 using CsvHelper.Configuration;
 using EnsureThat;
+using Project.GtfsNet.Entities;
 
 namespace Project.GtfsNet.Parsers
 {
-	public class EntityParser<TEntity, TEntityMap> : IEntityParser<TEntity> where TEntityMap : CsvClassMap
+	public class EntityParser<T, TMap> : IEntityParser<T>
+		where T : IEntity
+		where TMap : CsvClassMap
 	{
-		public IEnumerable<TEntity> Parse(TextReader textReader)
+		public IEnumerable<T> Parse(TextReader textReader)
 		{
 			Ensure.That(() => textReader).IsNotNull();
 
 			var csv = new CsvReader(textReader);
-			csv.Configuration.RegisterClassMap<TEntityMap>();
+			csv.Configuration.RegisterClassMap<TMap>();
 			csv.Configuration.WillThrowOnMissingField = false;
 
-			var records = csv.GetRecords<TEntity>();
+			var records = csv.GetRecords<T>();
 
 			return records;
 		}
-
 	}
 }
