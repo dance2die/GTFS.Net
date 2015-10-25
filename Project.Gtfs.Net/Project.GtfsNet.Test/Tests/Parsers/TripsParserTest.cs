@@ -8,7 +8,7 @@ using Project.GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Tests
+namespace Project.GtfsNet.Test.Tests.Parsers
 {
 	public class TripsParserTest : ParserTestBase
 	{

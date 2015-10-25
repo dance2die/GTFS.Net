@@ -72,22 +72,22 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\AgencyParserTest.cs" />
-    <Compile Include="Tests\CalendarDatesParserTest.cs" />
-    <Compile Include="Tests\CalendarParserTest.cs" />
-    <Compile Include="Tests\DateTimeParserTest.cs" />
-    <Compile Include="Tests\EntityParserFactoryTest.cs" />
-    <Compile Include="Tests\FareAttribributesParserTest.cs" />
-    <Compile Include="Tests\FareRulesParserTest.cs" />
-    <Compile Include="Tests\FeedInfoParserTest.cs" />
-    <Compile Include="Tests\FrequenciesParserTest.cs" />
-    <Compile Include="Tests\ParserTestBase.cs" />
-    <Compile Include="Tests\RoutesParserTest.cs" />
-    <Compile Include="Tests\ShapesParserTest.cs" />
-    <Compile Include="Tests\StopsParserTest.cs" />
-    <Compile Include="Tests\StopTimesParser.cs" />
-    <Compile Include="Tests\TransfersParserTest.cs" />
-    <Compile Include="Tests\TripsParserTest.cs" />
+    <Compile Include="Tests\Parsers\AgencyParserTest.cs" />
+    <Compile Include="Tests\Parsers\CalendarDatesParserTest.cs" />
+    <Compile Include="Tests\Parsers\CalendarParserTest.cs" />
+    <Compile Include="Tests\Parsers\DateTimeParserTest.cs" />
+    <Compile Include="Tests\Parsers\EntityParserFactoryTest.cs" />
+    <Compile Include="Tests\Parsers\FareAttribributesParserTest.cs" />
+    <Compile Include="Tests\Parsers\FareRulesParserTest.cs" />
+    <Compile Include="Tests\Parsers\FeedInfoParserTest.cs" />
+    <Compile Include="Tests\Parsers\FrequenciesParserTest.cs" />
+    <Compile Include="Tests\Parsers\ParserTestBase.cs" />
+    <Compile Include="Tests\Parsers\RoutesParserTest.cs" />
+    <Compile Include="Tests\Parsers\ShapesParserTest.cs" />
+    <Compile Include="Tests\Parsers\StopsParserTest.cs" />
+    <Compile Include="Tests\Parsers\StopTimesParser.cs" />
+    <Compile Include="Tests\Parsers\TransfersParserTest.cs" />
+    <Compile Include="Tests\Parsers\TripsParserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="feeds\lirr\agency.txt">
