@@ -1,10 +1,8 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Project.GtfsNet.Entities;
-using Project.GtfsNet.Entities.Maps;
 using Project.GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
