@@ -13,7 +13,7 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		public override string TestFilePath { get; } = "feeds/subway/stop_times.txt";
 
-		public EntityParser<StopTimes, StopTimesMap> _parser = new EntityParser<StopTimes, StopTimesMap>();
+		public EntityParser<StopTime, StopTimesMap> _parser = new EntityParser<StopTime, StopTimesMap>();
 
 		public StopTimesParser(ITestOutputHelper output)
 		{
@@ -25,8 +25,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<StopTimes> parsed = _parser.Parse(textReader);
-				List<StopTimes> parsedList = parsed.ToList();
+				IEnumerable<StopTime> parsed = _parser.Parse(textReader);
+				List<StopTime> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -39,10 +39,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<StopTimes> parsed = _parser.Parse(textReader);
-				List<StopTimes> parsedList = parsed.ToList();
+				IEnumerable<StopTime> parsed = _parser.Parse(textReader);
+				List<StopTime> parsedList = parsed.ToList();
 
-				StopTimes item = parsedList[0];
+				StopTime item = parsedList[0];
 
 				Assert.Null(item.DropOffType);
 				Assert.Null(item.PickupType);

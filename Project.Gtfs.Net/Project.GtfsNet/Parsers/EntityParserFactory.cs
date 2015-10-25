@@ -20,27 +20,27 @@ namespace Project.GtfsNet.Parsers
 				case SupportedFileNames.Calendar:
 					return new EntityParser<Calendar, CalendarMap>();
 				case SupportedFileNames.CalendarDates:
-					return new EntityParser<CalendarDates, CalendarDatesMap>();
+					return new EntityParser<CalendarDate, CalendarDatesMap>();
 				case SupportedFileNames.FareAttributes:
-					return new EntityParser<FareAttributes, FareAttributesMap>();
+					return new EntityParser<FareAttribute, FareAttributesMap>();
 				case SupportedFileNames.FareRules:
-					return new EntityParser<FareRules, FareRulesMap>();
+					return new EntityParser<FareRule, FareRulesMap>();
 				case SupportedFileNames.FeedInfo:
 					return new EntityParser<FeedInfo, FeedInfoMap>();
 				case SupportedFileNames.Frequencies:
-					return new EntityParser<Frequencies, FrequenciesMap>();
+					return new EntityParser<Frequency, FrequenciesMap>();
 				case SupportedFileNames.Routes:
-					return new EntityParser<Routes, RoutesMap>();
+					return new EntityParser<Route, RoutesMap>();
 				case SupportedFileNames.Shapes:
-					return new EntityParser<Shapes, ShapesMap>();
+					return new EntityParser<Shape, ShapesMap>();
 				case SupportedFileNames.StopTimes:
-					return new EntityParser<StopTimes, StopTimesMap>();
+					return new EntityParser<StopTime, StopTimesMap>();
 				case SupportedFileNames.Stops:
-					return new EntityParser<Stops, StopsMap>();
+					return new EntityParser<Stop, StopsMap>();
 				case SupportedFileNames.Transfers:
-					return new EntityParser<Transfers, TransfersMap>();
+					return new EntityParser<Transfer, TransfersMap>();
 				case SupportedFileNames.Trips:
-					return new EntityParser<Trips, TripsMap>();
+					return new EntityParser<Trip, TripsMap>();
 				default:
 					throw new ArgumentException();
 			}

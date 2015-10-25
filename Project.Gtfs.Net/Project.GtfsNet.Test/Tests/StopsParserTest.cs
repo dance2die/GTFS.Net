@@ -14,7 +14,7 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		public override string TestFilePath { get; } = "feeds/subway/stops.txt";
 
-		public EntityParser<Stops,StopsMap> _parser = new EntityParser<Stops, StopsMap>();
+		public EntityParser<Stop,StopsMap> _parser = new EntityParser<Stop, StopsMap>();
 
 		public StopsParserTest(ITestOutputHelper output)
 		{
@@ -32,8 +32,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Stops> parsed = _parser.Parse(textReader);
-				List<Stops> parsedList = parsed.ToList();
+				IEnumerable<Stop> parsed = _parser.Parse(textReader);
+				List<Stop> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -46,24 +46,24 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Stops> stops = _parser.Parse(textReader);
-				List<Stops> stopsList = stops.ToList();
+				IEnumerable<Stop> stops = _parser.Parse(textReader);
+				List<Stop> stopsList = stops.ToList();
 
-				Stops stopsItem = stopsList[0];
+				Stop stopItem = stopsList[0];
 
-				Assert.Null(stopsItem.Code);
-				Assert.Null(stopsItem.Description);
-				Assert.Null(stopsItem.LocationType);
-				Assert.Null(stopsItem.ParentStation);
-				Assert.Null(stopsItem.Timezone);
-				Assert.Null(stopsItem.Url);
-				Assert.Null(stopsItem.WheelchairBoarding);
-				Assert.Null(stopsItem.Zone);
+				Assert.Null(stopItem.Code);
+				Assert.Null(stopItem.Description);
+				Assert.Null(stopItem.LocationType);
+				Assert.Null(stopItem.ParentStation);
+				Assert.Null(stopItem.Timezone);
+				Assert.Null(stopItem.Url);
+				Assert.Null(stopItem.WheelchairBoarding);
+				Assert.Null(stopItem.Zone);
 
-				Assert.Equal("1", stopsItem.Id);
-				Assert.Equal(40.74128, stopsItem.Latitude);
-				Assert.Equal(-73.95639, stopsItem.Longitude);
-				Assert.Equal("Long Island City", stopsItem.Name);
+				Assert.Equal("1", stopItem.Id);
+				Assert.Equal(40.74128, stopItem.Latitude);
+				Assert.Equal(-73.95639, stopItem.Longitude);
+				Assert.Equal("Long Island City", stopItem.Name);
 			}
 		}
 	}

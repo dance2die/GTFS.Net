@@ -2,7 +2,7 @@
 
 namespace Project.GtfsNet.Entities.Maps
 {
-	public class StopTimesMap : CsvClassMap<StopTimes>
+	public class StopTimesMap : CsvClassMap<StopTime>
 	{
 		public StopTimesMap()
 		{

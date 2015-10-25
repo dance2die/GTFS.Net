@@ -11,7 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class FareRulesParserTest : ParserTestBase
 	{
-		private readonly EntityParser<FareRules, FareRulesMap> _parser = new EntityParser<FareRules, FareRulesMap>();
+		private readonly EntityParser<FareRule, FareRulesMap> _parser = new EntityParser<FareRule, FareRulesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/fare_rules.txt";
 
@@ -25,8 +25,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<FareRules> parsed = _parser.Parse(textReader);
-				List<FareRules> parsedList = parsed.ToList();
+				IEnumerable<FareRule> parsed = _parser.Parse(textReader);
+				List<FareRule> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -39,10 +39,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<FareRules> parsed = _parser.Parse(textReader);
-				List<FareRules> parsedList = parsed.ToList();
+				IEnumerable<FareRule> parsed = _parser.Parse(textReader);
+				List<FareRule> parsedList = parsed.ToList();
 
-				FareRules item = parsedList[0];
+				FareRule item = parsedList[0];
 
 				Assert.Equal("", item.ContainsId);
 				Assert.Equal("", item.DestinationId);

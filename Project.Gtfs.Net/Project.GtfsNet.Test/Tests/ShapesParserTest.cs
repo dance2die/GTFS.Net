@@ -11,7 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class ShapesParserTest : ParserTestBase
 	{
-		private readonly EntityParser<Shapes, ShapesMap> _parser = new EntityParser<Shapes, ShapesMap>();
+		private readonly EntityParser<Shape, ShapesMap> _parser = new EntityParser<Shape, ShapesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/shapes.txt";
 
@@ -25,8 +25,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Shapes> parsed = _parser.Parse(textReader);
-				List<Shapes> parsedList = parsed.ToList();
+				IEnumerable<Shape> parsed = _parser.Parse(textReader);
+				List<Shape> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -39,10 +39,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Shapes> parsed = _parser.Parse(textReader);
-				List<Shapes> parsedList = parsed.ToList();
+				IEnumerable<Shape> parsed = _parser.Parse(textReader);
+				List<Shape> parsedList = parsed.ToList();
 
-				Shapes item = parsedList[0];
+				Shape item = parsedList[0];
 
 				Assert.Null(item.DistanceTraveled);
 

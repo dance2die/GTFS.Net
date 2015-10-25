@@ -2,7 +2,7 @@
 
 namespace Project.GtfsNet.Entities.Maps
 {
-	public class FareAttributesMap : CsvClassMap<FareAttributes>
+	public class FareAttributesMap : CsvClassMap<FareAttribute>
 	{
 		public FareAttributesMap()
 		{

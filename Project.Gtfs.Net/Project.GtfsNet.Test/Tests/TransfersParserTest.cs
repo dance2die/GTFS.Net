@@ -12,7 +12,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class TransfersParserTest : ParserTestBase
 	{
-		private readonly EntityParser<Transfers, TransfersMap> _parser = new EntityParser<Transfers, TransfersMap>();
+		private readonly EntityParser<Transfer, TransfersMap> _parser = new EntityParser<Transfer, TransfersMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/transfers.txt";
 
@@ -26,8 +26,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Transfers> parsed = _parser.Parse(textReader);
-				List<Transfers> parsedList = parsed.ToList();
+				IEnumerable<Transfer> parsed = _parser.Parse(textReader);
+				List<Transfer> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -40,10 +40,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Transfers> parsed = _parser.Parse(textReader);
-				List<Transfers> parsedList = parsed.ToList();
+				IEnumerable<Transfer> parsed = _parser.Parse(textReader);
+				List<Transfer> parsedList = parsed.ToList();
 
-				Transfers item = parsedList[0];
+				Transfer item = parsedList[0];
 
 				Assert.Equal("101", item.FromStopId);
 				Assert.Equal("180", item.MinimumTransferTime);

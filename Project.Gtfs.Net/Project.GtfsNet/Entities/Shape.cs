@@ -32,7 +32,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Shape.cs
 	/// </remarks>
-	public class Shapes : IEntity
+	public class Shape : IEntity
 	{
 		/// <summary>
 		/// Gets or sets an ID that uniquely identifies a shape.

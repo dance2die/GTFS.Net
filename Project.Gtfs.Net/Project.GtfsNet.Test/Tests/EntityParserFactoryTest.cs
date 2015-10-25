@@ -44,7 +44,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.CalendarDates);
 
-			Assert.True(typeof (CalendarDates).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (CalendarDate).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (CalendarDatesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -55,7 +55,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.FareAttributes);
 
-			Assert.True(typeof (FareAttributes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (FareAttribute).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FareAttributesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -66,7 +66,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.FareRules);
 
-			Assert.True(typeof (FareRules).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (FareRule).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FareRulesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -88,7 +88,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Frequencies);
 
-			Assert.True(typeof (Frequencies).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (Frequency).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (FrequenciesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -99,7 +99,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Routes);
 
-			Assert.True(typeof (Routes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (Route).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (RoutesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -110,7 +110,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Shapes);
 
-			Assert.True(typeof (Shapes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (Shape).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (ShapesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -121,7 +121,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.StopTimes);
 
-			Assert.True(typeof (StopTimes).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (StopTime).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (StopTimesMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -132,7 +132,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Stops);
 
-			Assert.True(typeof (Stops).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (Stop).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (StopsMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -143,7 +143,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Transfers);
 
-			Assert.True(typeof (Transfers).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (Transfer).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (TransfersMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 
@@ -154,7 +154,7 @@ namespace Project.GtfsNet.Test.Tests
 
 			var parser = sut.Create(EntityParserFactory.SupportedFileNames.Trips);
 
-			Assert.True(typeof (Trips).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
+			Assert.True(typeof (Trip).IsAssignableFrom(parser.GetType().GetGenericArguments()[0]));
 			Assert.True(typeof (TripsMap).IsAssignableFrom(parser.GetType().GetGenericArguments()[1]));
 		}
 	}

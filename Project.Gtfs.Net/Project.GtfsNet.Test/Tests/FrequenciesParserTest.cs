@@ -11,7 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class FrequenciesParserTest : ParserTestBase
 	{
-		private readonly EntityParser<Frequencies, FrequenciesMap> _parser = new EntityParser<Frequencies, FrequenciesMap>();
+		private readonly EntityParser<Frequency, FrequenciesMap> _parser = new EntityParser<Frequency, FrequenciesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/frequencies.txt";
 
@@ -25,8 +25,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Frequencies> parsed = _parser.Parse(textReader);
-				List<Frequencies> parsedList = parsed.ToList();
+				IEnumerable<Frequency> parsed = _parser.Parse(textReader);
+				List<Frequency> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -39,10 +39,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Frequencies> parsed = _parser.Parse(textReader);
-				List<Frequencies> parsedList = parsed.ToList();
+				IEnumerable<Frequency> parsed = _parser.Parse(textReader);
+				List<Frequency> parsedList = parsed.ToList();
 
-				Frequencies item = parsedList[0];
+				Frequency item = parsedList[0];
 
 				Assert.Null(item.ExactTimes);
 

@@ -2,7 +2,7 @@
 
 namespace Project.GtfsNet.Entities.Maps
 {
-	public class FrequenciesMap : CsvClassMap<Frequencies>
+	public class FrequenciesMap : CsvClassMap<Frequency>
 	{
 		public FrequenciesMap()
 		{

@@ -14,7 +14,7 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		public override string TestFilePath { get; } = "feeds/subway/trips.txt";
 
-		public EntityParser<Trips, TripsMap> _parser = new EntityParser<Trips, TripsMap>();
+		public EntityParser<Trip, TripsMap> _parser = new EntityParser<Trip, TripsMap>();
 
 		public TripsParserTest(ITestOutputHelper output)
 		{
@@ -26,8 +26,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Trips> parsed = _parser.Parse(textReader);
-				List<Trips> parsedList = parsed.ToList();
+				IEnumerable<Trip> parsed = _parser.Parse(textReader);
+				List<Trip> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -40,10 +40,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Trips> parsed = _parser.Parse(textReader);
-				List<Trips> parsedList = parsed.ToList();
+				IEnumerable<Trip> parsed = _parser.Parse(textReader);
+				List<Trip> parsedList = parsed.ToList();
 
-				Trips stopsItem = parsedList[0];
+				Trip stopsItem = parsedList[0];
 
 				Assert.Null(stopsItem.BlockId);
 				Assert.Null(stopsItem.WheelchairAccessibilityType);

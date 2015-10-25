@@ -32,7 +32,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Frequency.cs
 	/// </remarks>
-	public class Frequencies : IEntity
+	public class Frequency : IEntity
 	{
 		/// <summary>
 		/// Gets or sets a trip.

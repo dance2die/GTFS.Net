@@ -28,7 +28,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from 
 	/// https://github.com/OsmSharp/GTFS/blob/226a247861cf90badde49655095193ac829cf227/GTFS/Entities/FareRule.cs
 	/// </remarks>
-	public class FareRules : IEntity
+	public class FareRule : IEntity
 	{
 		[Required]
 		public string FareId { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Project.GtfsNet.Entities.Maps
 {
-	public class TripsMap : CsvClassMap<Trips>
+	public class TripsMap : CsvClassMap<Trip>
 	{
 		public TripsMap()
 		{

@@ -13,7 +13,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class CalendarDatesParserTest : ParserTestBase
 	{
-		private readonly EntityParser<CalendarDates, CalendarDatesMap> _parser = new EntityParser<CalendarDates, CalendarDatesMap>();
+		private readonly EntityParser<CalendarDate, CalendarDatesMap> _parser = new EntityParser<CalendarDate, CalendarDatesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/calendar_dates.txt";
 
@@ -27,8 +27,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<CalendarDates> parsed = _parser.Parse(textReader);
-				List<CalendarDates> parsedList = parsed.ToList();
+				IEnumerable<CalendarDate> parsed = _parser.Parse(textReader);
+				List<CalendarDate> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -41,10 +41,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<CalendarDates> parsed = _parser.Parse(textReader);
-				List<CalendarDates> parsedList = parsed.ToList();
+				IEnumerable<CalendarDate> parsed = _parser.Parse(textReader);
+				List<CalendarDate> parsedList = parsed.ToList();
 
-				CalendarDates item = parsedList[0];
+				CalendarDate item = parsedList[0];
 
 				Assert.Equal(new DateTime(2015, 10, 24), item.Date);
 				Assert.Equal(ExceptionType.Removed, item.ExceptionType);

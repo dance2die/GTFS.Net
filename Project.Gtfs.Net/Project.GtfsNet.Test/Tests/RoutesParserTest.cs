@@ -14,7 +14,7 @@ namespace Project.GtfsNet.Test.Tests
 	{
 		public override string TestFilePath { get; } =  "feeds/subway/routes.txt";
 
-		public EntityParser<Routes, RoutesMap> _parser = new EntityParser<Routes, RoutesMap>();
+		public EntityParser<Route, RoutesMap> _parser = new EntityParser<Route, RoutesMap>();
 
 		public RoutesParserTest(ITestOutputHelper output)
 		{
@@ -26,8 +26,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Routes> parsed = _parser.Parse(textReader);
-				List<Routes> parsedList = parsed.ToList();
+				IEnumerable<Route> parsed = _parser.Parse(textReader);
+				List<Route> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -40,22 +40,22 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<Routes> parsed = _parser.Parse(textReader);
-				List<Routes> parsedList = parsed.ToList();
+				IEnumerable<Route> parsed = _parser.Parse(textReader);
+				List<Route> parsedList = parsed.ToList();
 
-				Routes routes = parsedList[0];
+				Route route = parsedList[0];
 
-				Assert.Null(routes.AgencyId);
-				Assert.Null(routes.Description);
-				Assert.Null(routes.Url);
+				Assert.Null(route.AgencyId);
+				Assert.Null(route.Description);
+				Assert.Null(route.Url);
 
-				Assert.Equal("00985F", routes.Color);
-				Assert.Equal("1", routes.Id);
-				Assert.Equal("Babylon", routes.LongName);
-				Assert.Equal("", routes.ShortName);
-				Assert.Equal("FFFFFF", routes.TextColor);
+				Assert.Equal("00985F", route.Color);
+				Assert.Equal("1", route.Id);
+				Assert.Equal("Babylon", route.LongName);
+				Assert.Equal("", route.ShortName);
+				Assert.Equal("FFFFFF", route.TextColor);
 
-				Assert.Equal(RouteType.Rail, routes.Type);
+				Assert.Equal(RouteType.Rail, route.Type);
 			}
 		}
 	}

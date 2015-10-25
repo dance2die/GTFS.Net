@@ -12,7 +12,7 @@ namespace Project.GtfsNet.Test.Tests
 {
 	public class FareAttribributesParserTest : ParserTestBase
 	{
-		private readonly EntityParser<FareAttributes, FareAttributesMap> _parser = new EntityParser<FareAttributes, FareAttributesMap>();
+		private readonly EntityParser<FareAttribute, FareAttributesMap> _parser = new EntityParser<FareAttribute, FareAttributesMap>();
 
 		public override string TestFilePath { get; } = "feeds/subway/fare_attributes.txt";
 
@@ -26,8 +26,8 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<FareAttributes> parsed = _parser.Parse(textReader);
-				List<FareAttributes> parsedList = parsed.ToList();
+				IEnumerable<FareAttribute> parsed = _parser.Parse(textReader);
+				List<FareAttribute> parsedList = parsed.ToList();
 
 				Assert.NotNull(parsedList);
 				Assert.True(parsedList.Any());
@@ -40,10 +40,10 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			using (TextReader textReader = GetTextReader())
 			{
-				IEnumerable<FareAttributes> parsed = _parser.Parse(textReader);
-				List<FareAttributes> parsedList = parsed.ToList();
+				IEnumerable<FareAttribute> parsed = _parser.Parse(textReader);
+				List<FareAttribute> parsedList = parsed.ToList();
 
-				FareAttributes item = parsedList[0];
+				FareAttribute item = parsedList[0];
 
 				Assert.Equal("USD", item.CurrencyType);
 				Assert.Equal("1", item.FareId);

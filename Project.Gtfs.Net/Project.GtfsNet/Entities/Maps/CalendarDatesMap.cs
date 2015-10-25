@@ -3,7 +3,7 @@ using Project.GtfsNet.Parsers;
 
 namespace Project.GtfsNet.Entities.Maps
 {
-	public class CalendarDatesMap : CsvClassMap<CalendarDates>
+	public class CalendarDatesMap : CsvClassMap<CalendarDate>
 	{
 		public CalendarDatesMap()
 		{

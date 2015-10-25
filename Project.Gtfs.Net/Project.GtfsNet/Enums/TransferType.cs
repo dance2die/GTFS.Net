@@ -44,7 +44,7 @@ namespace Project.GtfsNet.Enums
 		/// </summary>
 		MinimumTime,
 		/// <summary>
-		/// 3: Transfers are not possible between routes at this location.
+		/// 3: Transfer are not possible between routes at this location.
 		/// </summary>
 		NotPossible
 	}

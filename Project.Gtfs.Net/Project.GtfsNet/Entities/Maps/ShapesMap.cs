@@ -2,7 +2,7 @@
 
 namespace Project.GtfsNet.Entities.Maps
 {
-	public class ShapesMap : CsvClassMap<Shapes>
+	public class ShapesMap : CsvClassMap<Shape>
 	{
 		public ShapesMap()
 		{
