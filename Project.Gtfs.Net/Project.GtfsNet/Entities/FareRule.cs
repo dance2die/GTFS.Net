@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Project.GtfsNet.Entities
@@ -28,7 +29,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from 
 	/// https://github.com/OsmSharp/GTFS/blob/226a247861cf90badde49655095193ac829cf227/GTFS/Entities/FareRule.cs
 	/// </remarks>
-	public class FareRule : IEntity
+	public class FareRule : Entity, IEqualityComparer<FareRule>
 	{
 		[Required]
 		public string FareId { get; set; }
@@ -40,5 +41,15 @@ namespace Project.GtfsNet.Entities
 		public string DestinationId { get; set; }
 
 		public string ContainsId { get; set; }
+
+		public bool Equals(FareRule x, FareRule y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(FareRule obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }
