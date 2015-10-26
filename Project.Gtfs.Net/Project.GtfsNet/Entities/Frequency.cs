@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Project.GtfsNet.Entities
@@ -32,7 +33,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Frequency.cs
 	/// </remarks>
-	public class Frequency : IEntity
+	public class Frequency : Entity, IEqualityComparer<Frequency>
 	{
 		/// <summary>
 		/// Gets or sets a trip.
@@ -62,5 +63,15 @@ namespace Project.GtfsNet.Entities
 		/// Gets or sets a value that determines if frequency-based trips should be exactly scheduled based on the specified headway information. Valid values for this field are:
 		/// </summary>
 		public bool? ExactTimes { get; set; }
+
+		public bool Equals(Frequency x, Frequency y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(Frequency obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }
