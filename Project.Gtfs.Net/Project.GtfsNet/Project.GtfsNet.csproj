@@ -52,6 +52,7 @@
     <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\Calendar.cs" />
     <Compile Include="Entities\CalendarDate.cs" />
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\FareAttribute.cs" />
     <Compile Include="Entities\FareRule.cs" />
     <Compile Include="Entities\FeedInfo.cs" />
