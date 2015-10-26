@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Project.GtfsNet.Enums;
 
@@ -9,7 +10,7 @@ namespace Project.GtfsNet.Entities
 	/// <remarks>
 	/// Copied from "https://github.com/OsmSharp/GTFS/blob/2b8f3201e65ab5dd31cdacd82b4b05d34c288204/GTFS/Entities/Stop.cs"
 	/// </remarks>
-	public class Stop : IEntity
+	public class Stop : Entity, IEqualityComparer<Stop>
 	{
 		[Required]
 		public string Id { get; set; }
@@ -42,6 +43,16 @@ namespace Project.GtfsNet.Entities
 		public override string ToString()
 		{
 			return string.Format("[{0}] {1} - {2}", Id, Name, Description);
+		}
+
+		public bool Equals(Stop x, Stop y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(Stop obj)
+		{
+			return ComputeHashCode(obj);
 		}
 	}
 }

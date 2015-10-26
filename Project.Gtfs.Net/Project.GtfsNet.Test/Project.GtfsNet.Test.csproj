@@ -81,6 +81,7 @@
     <Compile Include="Tests\Entities\FrequencyEqualityTest.cs" />
     <Compile Include="Tests\Entities\RouteEqualityTest.cs" />
     <Compile Include="Tests\Entities\ShapeEqualityTest.cs" />
+    <Compile Include="Tests\Entities\StopEqualityTest.cs" />
     <Compile Include="Tests\Parsers\AgencyParserTest.cs" />
     <Compile Include="Tests\Parsers\CalendarDatesParserTest.cs" />
     <Compile Include="Tests\Parsers\CalendarParserTest.cs" />
