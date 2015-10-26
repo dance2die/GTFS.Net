@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
 
 namespace Project.GtfsNet.Entities
 {
@@ -36,13 +38,9 @@ namespace Project.GtfsNet.Entities
 		public override bool Equals(object obj)
 		{
 			Agency agency = obj as Agency;
-			return agency.Id == Id &&
-				   agency.Name == Name &&
-				   agency.Url == Url &&
-				   agency.Timezone == Timezone &&
-				   agency.Language == Language &&
-				   agency.Phone == Phone &&
-				   agency.FareUrl == FareUrl;
+			if (agency == null) return false;
+
+			return AreEqual(agency, this);
 		}
 
 		public bool Equals(Agency x, Agency y)
@@ -52,13 +50,27 @@ namespace Project.GtfsNet.Entities
 
 		public int GetHashCode(Agency agency)
 		{
-			return agency.Id.GetHashCode() +
-				   agency.Name.GetHashCode() +
-				   agency.Url.GetHashCode() +
-				   agency.Timezone.GetHashCode() +
-				   agency.Language.GetHashCode() +
-				   agency.Phone.GetHashCode() +
-				   agency.FareUrl.GetHashCode();
+			return ComputeHashCode(agency);
+		}
+
+		protected int ComputeHashCode<T>(T obj)
+		{
+			return obj.GetType().GetProperties().Sum(property => property.GetHashCode());
+		}
+
+		protected bool AreEqual<T>(T obj1, T obj2)
+		{
+			// http://stackoverflow.com/a/2502468/4035
+			foreach (PropertyInfo property in obj1.GetType().GetProperties())
+			{
+				object value1 = property.GetValue(obj1, null);
+				object value2 = property.GetValue(obj2, null);
+
+				if (!value1.Equals(value2))
+					return false;
+			}
+
+			return true;
 		}
 	}
 }
