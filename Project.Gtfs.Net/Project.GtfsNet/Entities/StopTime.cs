@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Project.GtfsNet.Enums;
 
 namespace Project.GtfsNet.Entities
 {
-	public class StopTime : IEntity
+	public class StopTime : Entity, IEqualityComparer<StopTime>
 	{
 		[Required]
 		public string TripId { get; set; }
@@ -37,5 +38,14 @@ namespace Project.GtfsNet.Entities
 			return string.Format("[{0}:{1}] {2}", TripId, StopId, StopHeadsign);
 		}
 
+		public bool Equals(StopTime x, StopTime y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(StopTime obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }
