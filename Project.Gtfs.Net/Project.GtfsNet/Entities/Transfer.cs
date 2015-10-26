@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Project.GtfsNet.Enums;
 
@@ -32,7 +33,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Transfer.cs
 	/// </remarks>
-	public class Transfer : IEntity
+	public class Transfer : Entity, IEqualityComparer<Transfer>
 	{
 		/// <summary>
 		/// Gets or sets a stop or station where a connection between routes begins.
@@ -56,5 +57,15 @@ namespace Project.GtfsNet.Entities
 		/// Gets or sets the amount of time that must be available in an itinerary to permit a transfer between routes at these stops.
 		/// </summary>
 		public string MinimumTransferTime { get; set; }
+
+		public bool Equals(Transfer x, Transfer y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(Transfer obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }

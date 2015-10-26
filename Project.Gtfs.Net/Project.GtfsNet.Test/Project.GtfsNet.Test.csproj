@@ -83,6 +83,7 @@
     <Compile Include="Tests\Entities\ShapeEqualityTest.cs" />
     <Compile Include="Tests\Entities\StopEqualityTest.cs" />
     <Compile Include="Tests\Entities\StopTimeEqualityTest.cs" />
+    <Compile Include="Tests\Entities\TransferEqualityTest.cs" />
     <Compile Include="Tests\Parsers\AgencyParserTest.cs" />
     <Compile Include="Tests\Parsers\CalendarDatesParserTest.cs" />
     <Compile Include="Tests\Parsers\CalendarParserTest.cs" />
