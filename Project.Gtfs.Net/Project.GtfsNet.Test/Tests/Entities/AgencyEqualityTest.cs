@@ -15,7 +15,7 @@ namespace Project.GtfsNet.Test.Tests.Entities
 		}
 
 		[Fact]
-		public void CheckThatTwoAgencyObjectsAreSame()
+		public void CheckThatTwoObjectsAreSame()
 		{
 			const string fareUrl = "http://www.google.com";
 			const string id = "1";
@@ -50,7 +50,7 @@ namespace Project.GtfsNet.Test.Tests.Entities
 		}
 
 		[Fact]
-		public void CheckThatTwoAgencyObjectsAreDifferent()
+		public void CheckThatTwoObjectsAreDifferent()
 		{
 			const string fareUrl = "http://www.google.com";
 			const string id = "1";
