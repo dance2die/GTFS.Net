@@ -5,8 +5,8 @@ namespace Project.GtfsNet.Test.Tests.Entities
 {
 	public class AgencyEqualityTest
 	{
-		private Agency _sut1;
-		private Agency _sut2;
+		private readonly Agency _sut1;
+		private readonly Agency _sut2;
 
 		public AgencyEqualityTest()
 		{
