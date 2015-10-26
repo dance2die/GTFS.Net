@@ -75,6 +75,7 @@
     <Compile Include="Tests\Entities\AgencyEqualityTest.cs" />
     <Compile Include="Tests\Entities\CalendarDateEqualityTest.cs" />
     <Compile Include="Tests\Entities\CalendarEqualityTest.cs" />
+    <Compile Include="Tests\Entities\FareAttributeEqualityTest.cs" />
     <Compile Include="Tests\Parsers\AgencyParserTest.cs" />
     <Compile Include="Tests\Parsers\CalendarDatesParserTest.cs" />
     <Compile Include="Tests\Parsers\CalendarParserTest.cs" />

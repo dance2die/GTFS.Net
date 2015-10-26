@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Project.GtfsNet.Enums;
 
@@ -32,7 +33,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/226a247861cf90badde49655095193ac829cf227/GTFS/Entities/FareAttribute.cs
 	/// </remarks>
-	public class FareAttribute : IEntity
+	public class FareAttribute : Entity, IEqualityComparer<FareAttribute>
 	{
 		[Required]
 		public string FareId { get; set; }
@@ -50,5 +51,15 @@ namespace Project.GtfsNet.Entities
 		public int? Transfers { get; set; }
 
 		public string TransferDuration { get; set; }
+
+		public bool Equals(FareAttribute x, FareAttribute y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(FareAttribute obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }
