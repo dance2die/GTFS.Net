@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Project.GtfsNet.Entities
@@ -10,7 +11,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Calendar.cs
 	/// </remarks>
-	public class Calendar : IEntity
+	public class Calendar : Entity, IEqualityComparer<Calendar>
 	{
 		[Required]
 		public string ServiceId { get; set; }
@@ -53,6 +54,16 @@ namespace Project.GtfsNet.Entities
 				Friday ? "1" : "0",
 				Saturday ? "1" : "0",
 				Sunday ? "1" : "0");
+		}
+
+		public bool Equals(Calendar x, Calendar y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(Calendar obj)
+		{
+			return ComputeHashCode(obj);
 		}
 	}
 }
