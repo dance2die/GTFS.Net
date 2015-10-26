@@ -17,6 +17,7 @@ namespace Project.GtfsNet.Entities
 			{
 				object value1 = property.GetValue(obj1, null);
 				object value2 = property.GetValue(obj2, null);
+				if (value1 == null) continue;
 
 				if (!value1.Equals(value2))
 					return false;

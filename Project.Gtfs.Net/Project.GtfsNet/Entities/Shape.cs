@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Project.GtfsNet.Entities
@@ -32,7 +33,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/Shape.cs
 	/// </remarks>
-	public class Shape : IEntity
+	public class Shape : Entity, IEqualityComparer<Shape>
 	{
 		/// <summary>
 		/// Gets or sets an ID that uniquely identifies a shape.
@@ -62,5 +63,15 @@ namespace Project.GtfsNet.Entities
 		/// Gets or sets the distance traveled along a shape from the first shape point.
 		/// </summary>
 		public double? DistanceTraveled { get; set; }
+
+		public bool Equals(Shape x, Shape y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(Shape obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }
