@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Project.GtfsNet.Enums;
 
 namespace Project.GtfsNet.Entities
 {
-	public class Trip : IEntity
+	public class Trip : Entity, IEqualityComparer<Trip>
 	{
 		[Required]
 		public string Id { get; set; }
@@ -32,5 +33,14 @@ namespace Project.GtfsNet.Entities
 			return string.Format("[{0}] {1}", this.ShortName, this.Headsign);
 		}
 
+		public bool Equals(Trip x, Trip y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(Trip obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }
