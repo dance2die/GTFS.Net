@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Project.GtfsNet.Entities
@@ -31,7 +32,7 @@ namespace Project.GtfsNet.Entities
 	/// Copied from
 	/// https://github.com/OsmSharp/GTFS/blob/master/GTFS/Entities/FeedInfo.cs
 	/// </remarks>
-	public class FeedInfo : IEntity
+	public class FeedInfo : Entity, IEqualityComparer<FeedInfo>
 	{
 		/// <summary>
 		/// Gets or sets the full name of the organization that publishes the feed. (This may be the same as one of the agency_name values in agency.txt.) GTFS-consuming applications can display this name when giving attribution for a particular feed's data.
@@ -65,5 +66,15 @@ namespace Project.GtfsNet.Entities
 		/// Gets or sets a string here that indicates the current version of their GTFS feed. GTFS-consuming applications can display this value to help feed publishers determine whether the latest version of their feed has been incorporated.
 		/// </summary>
 		public string Version { get; set; }
+
+		public bool Equals(FeedInfo x, FeedInfo y)
+		{
+			return AreEqual(x, y);
+		}
+
+		public int GetHashCode(FeedInfo obj)
+		{
+			return ComputeHashCode(obj);
+		}
 	}
 }
