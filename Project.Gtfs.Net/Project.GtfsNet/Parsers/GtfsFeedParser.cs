@@ -31,9 +31,12 @@ namespace Project.GtfsNet.Parsers
 
 		private HashSet<T> GetParsedList<T>(string feedPath)
 		{
-			var textReader = GetTextReader<T>(feedPath);
-			var entityParser = new EntityParserFactory().Create(EntityParserFactory.SupportedFileNames.GetFileNameByType<T>());
-			return new HashSet<T>(entityParser.Parse(textReader).Cast<T>());
+			using (var textReader = GetTextReader<T>(feedPath))
+			{
+				var entityParser = new EntityParserFactory().Create(
+					EntityParserFactory.SupportedFileNames.GetFileNameByType<T>());
+				return new HashSet<T>(entityParser.Parse(textReader).Cast<T>());
+			}
 		}
 
 		private TextReader GetTextReader<T>(string feedPath)
