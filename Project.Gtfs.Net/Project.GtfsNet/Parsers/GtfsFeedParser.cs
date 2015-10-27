@@ -27,6 +27,10 @@ namespace Project.GtfsNet.Parsers
 			result.CalendarDates = new HashSet<CalendarDate>(
 				parserFactory.Create(EntityParserFactory.SupportedFileNames.CalendarDates).Parse(calendarDatesTextReader).Cast<CalendarDate>());
 
+			var fareAttributesTextReader = GetTextReader(feedPath, EntityParserFactory.SupportedFileNames.FareAttributes);
+			result.FareAttributes = new HashSet<FareAttribute>(
+				parserFactory.Create(EntityParserFactory.SupportedFileNames.FareAttributes).Parse(fareAttributesTextReader).Cast<FareAttribute>());
+
 			return result;
 		}
 
