@@ -46,7 +46,9 @@ namespace Project.GtfsNet.Test.Tests.Parsers
 
 			_output.WriteLine("feed.Calendars.Count: {0}", feed.Calendars.Count);
 			Assert.NotEmpty(feed.Calendars);
-			//Assert.NotEmpty(feed.CalendarDates);
+
+			_output.WriteLine("feed.CalendarDates.Count: {0}", feed.CalendarDates.Count);
+			Assert.NotEmpty(feed.CalendarDates);
 			//Assert.NotEmpty(feed.FareAttributes);
 			//Assert.NotEmpty(feed.FareRules);
 			//Assert.NotEmpty(feed.FeedInfos);

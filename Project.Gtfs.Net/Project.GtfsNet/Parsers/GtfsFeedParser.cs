@@ -23,6 +23,10 @@ namespace Project.GtfsNet.Parsers
 			result.Calendars = new HashSet<Calendar>(
 				parserFactory.Create(EntityParserFactory.SupportedFileNames.Calendar).Parse(calendarTextReader).Cast<Calendar>());
 
+			var calendarDatesTextReader = GetTextReader(feedPath, EntityParserFactory.SupportedFileNames.CalendarDates);
+			result.CalendarDates = new HashSet<CalendarDate>(
+				parserFactory.Create(EntityParserFactory.SupportedFileNames.CalendarDates).Parse(calendarDatesTextReader).Cast<CalendarDate>());
+
 			return result;
 		}
 
