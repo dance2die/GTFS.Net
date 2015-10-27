@@ -9,21 +9,22 @@ namespace Project.GtfsNet.Parsers
 	{
 		public GtfsFeed Parse(string feedPath)
 		{
-			var result = new GtfsFeed();
-
-			result.Agencies = GetParsedList<Agency>(feedPath);
-			result.Calendars = GetParsedList<Calendar>(feedPath);
-			result.CalendarDates = GetParsedList<CalendarDate>(feedPath);
-			result.FareAttributes = GetParsedList<FareAttribute>(feedPath);
-			result.FareRules = GetParsedList<FareRule>(feedPath);
-			result.FeedInfos = GetParsedList<FeedInfo>(feedPath);
-			result.Frequencies = GetParsedList<Frequency>(feedPath);
-			result.Routes = GetParsedList<Route>(feedPath);
-			result.Shapes = GetParsedList<Shape>(feedPath);
-			result.Stops = GetParsedList<Stop>(feedPath);
-			result.StopTimes = GetParsedList<StopTime>(feedPath);
-			result.Transfers = GetParsedList<Transfer>(feedPath);
-			result.Trips = GetParsedList<Trip>(feedPath);
+			var result = new GtfsFeed
+			{
+				Agencies = GetParsedList<Agency>(feedPath),
+				Calendars = GetParsedList<Calendar>(feedPath),
+				CalendarDates = GetParsedList<CalendarDate>(feedPath),
+				FareAttributes = GetParsedList<FareAttribute>(feedPath),
+				FareRules = GetParsedList<FareRule>(feedPath),
+				FeedInfos = GetParsedList<FeedInfo>(feedPath),
+				Frequencies = GetParsedList<Frequency>(feedPath),
+				Routes = GetParsedList<Route>(feedPath),
+				Shapes = GetParsedList<Shape>(feedPath),
+				Stops = GetParsedList<Stop>(feedPath),
+				StopTimes = GetParsedList<StopTime>(feedPath),
+				Transfers = GetParsedList<Transfer>(feedPath),
+				Trips = GetParsedList<Trip>(feedPath)
+			};
 
 			return result;
 		}
@@ -35,7 +36,7 @@ namespace Project.GtfsNet.Parsers
 			return new HashSet<T>(entityParser.Parse(textReader).Cast<T>());
 		}
 
-		public TextReader GetTextReader<T>(string feedPath)
+		private TextReader GetTextReader<T>(string feedPath)
 		{
 			string fileName = EntityParserFactory.SupportedFileNames.GetFileNameByType<T>();
 			var testFilePath = Path.Combine(feedPath, fileName);
