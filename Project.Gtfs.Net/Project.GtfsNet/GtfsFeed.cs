@@ -7,24 +7,24 @@ namespace Project.GtfsNet
 	public class GtfsFeed
 	{
 		[Required]
-		public HashSet<Agency> Agencies { get; } = new HashSet<Agency>();
+		public HashSet<Agency> Agencies { get; set; } = new HashSet<Agency>();
 		[Required]
-		public HashSet<Stop> Stops { get; } = new HashSet<Stop>();
+		public HashSet<Stop> Stops { get; set; } = new HashSet<Stop>();
 		[Required]
-		public HashSet<Route> Routes { get; } = new HashSet<Route>();
+		public HashSet<Route> Routes { get; set; } = new HashSet<Route>();
 		[Required]
-		public HashSet<Trip> Trips { get; } = new HashSet<Trip>();
+		public HashSet<Trip> Trips { get; set; } = new HashSet<Trip>();
 		[Required]
-		public HashSet<StopTime> StopTimes { get; } = new HashSet<StopTime>();
+		public HashSet<StopTime> StopTimes { get; set; } = new HashSet<StopTime>();
 		[Required]
-		public HashSet<Calendar> Calendars { get; } = new HashSet<Calendar>();
+		public HashSet<Calendar> Calendars { get; set; } = new HashSet<Calendar>();
 
-		public HashSet<CalendarDate> CalendarDates { get; } = new HashSet<CalendarDate>();
-		public HashSet<FareAttribute> FareAttributes { get; } = new HashSet<FareAttribute>();
-		public HashSet<FareRule> FareRules { get; } = new HashSet<FareRule>();
-		public HashSet<Shape> Shapes { get; } = new HashSet<Shape>();
-		public HashSet<Frequency> Frequencies { get; } = new HashSet<Frequency>();
-		public HashSet<Transfer> Transfers { get; } = new HashSet<Transfer>();
-		public HashSet<FeedInfo> FeedInfos { get; } = new HashSet<FeedInfo>();
+		public HashSet<CalendarDate> CalendarDates { get; set; } = new HashSet<CalendarDate>();
+		public HashSet<FareAttribute> FareAttributes { get; set; } = new HashSet<FareAttribute>();
+		public HashSet<FareRule> FareRules { get; set; } = new HashSet<FareRule>();
+		public HashSet<Shape> Shapes { get; set; } = new HashSet<Shape>();
+		public HashSet<Frequency> Frequencies { get; set; } = new HashSet<Frequency>();
+		public HashSet<Transfer> Transfers { get; set; } = new HashSet<Transfer>();
+		public HashSet<FeedInfo> FeedInfos { get; set; } = new HashSet<FeedInfo>();
 	}
 }

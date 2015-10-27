@@ -1,15 +1,18 @@
 ﻿using Project.GtfsNet.Parsers;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests.Parsers
 {
 	public class GtfsFeedParserTest
 	{
+		private readonly ITestOutputHelper _output;
 		private readonly GtfsFeedParser _sut;
 		private const string FEED_PATH = "feeds/subway";
 
-		public GtfsFeedParserTest()
+		public GtfsFeedParserTest(ITestOutputHelper output)
 		{
+			_output = output;
 			_sut = new GtfsFeedParser();
 		}
 
@@ -31,6 +34,28 @@ namespace Project.GtfsNet.Test.Tests.Parsers
 			Assert.NotNull(feed.StopTimes);
 			Assert.NotNull(feed.Transfers);
 			Assert.NotNull(feed.Trips);
+		}
+
+		[Fact]
+		public void ParserReturnParsedGtfsFeedWithAtLeastOneRecordInEachProperty()
+		{
+			GtfsFeed feed = _sut.Parse(FEED_PATH);
+
+			_output.WriteLine("feed.Agencies.Count: {0}", feed.Agencies.Count);
+			Assert.NotEmpty(feed.Agencies);
+
+			//Assert.NotEmpty(feed.Calendars);
+			//Assert.NotEmpty(feed.CalendarDates);
+			//Assert.NotEmpty(feed.FareAttributes);
+			//Assert.NotEmpty(feed.FareRules);
+			//Assert.NotEmpty(feed.FeedInfos);
+			//Assert.NotEmpty(feed.Frequencies);
+			//Assert.NotEmpty(feed.Routes);
+			//Assert.NotEmpty(feed.Shapes);
+			//Assert.NotEmpty(feed.Stops);
+			//Assert.NotEmpty(feed.StopTimes);
+			//Assert.NotEmpty(feed.Transfers);
+			//Assert.NotEmpty(feed.Trips);
 		}
 	}
 }
