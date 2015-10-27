@@ -87,6 +87,7 @@
     <Compile Include="Enums\RouteType.cs" />
     <Compile Include="Entities\Stop.cs" />
     <Compile Include="Enums\LocationType.cs" />
+    <Compile Include="GtfsFeed.cs" />
     <Compile Include="Parsers\DateTimeParser.cs" />
     <Compile Include="Parsers\EntityParser.cs" />
     <Compile Include="Parsers\EntityParserFactory.cs" />
