@@ -91,6 +91,7 @@
     <Compile Include="Parsers\DateTimeParser.cs" />
     <Compile Include="Parsers\EntityParser.cs" />
     <Compile Include="Parsers\EntityParserFactory.cs" />
+    <Compile Include="Parsers\GtfsFeedParser.cs" />
     <Compile Include="Parsers\IEntityParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
