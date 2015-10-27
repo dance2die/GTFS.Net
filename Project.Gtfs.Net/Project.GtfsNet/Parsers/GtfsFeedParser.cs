@@ -19,6 +19,10 @@ namespace Project.GtfsNet.Parsers
 			result.Agencies = new HashSet<Agency>(
 				parserFactory.Create(EntityParserFactory.SupportedFileNames.Agency).Parse(agencyTextReader).Cast<Agency>());
 
+			var calendarTextReader = GetTextReader(feedPath, EntityParserFactory.SupportedFileNames.Calendar);
+			result.Calendars = new HashSet<Calendar>(
+				parserFactory.Create(EntityParserFactory.SupportedFileNames.Calendar).Parse(calendarTextReader).Cast<Calendar>());
+
 			return result;
 		}
 
