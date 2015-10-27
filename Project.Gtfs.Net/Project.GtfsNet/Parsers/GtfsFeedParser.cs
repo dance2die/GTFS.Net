@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Project.GtfsNet.Entities;
 
 namespace Project.GtfsNet.Parsers
@@ -13,29 +10,25 @@ namespace Project.GtfsNet.Parsers
 		public GtfsFeed Parse(string feedPath)
 		{
 			var result = new GtfsFeed();
-			var parserFactory = new EntityParserFactory();
 
-			var agencyTextReader = GetTextReader(feedPath, EntityParserFactory.SupportedFileNames.Agency);
-			result.Agencies = new HashSet<Agency>(
-				parserFactory.Create(EntityParserFactory.SupportedFileNames.Agency).Parse(agencyTextReader).Cast<Agency>());
-
-			var calendarTextReader = GetTextReader(feedPath, EntityParserFactory.SupportedFileNames.Calendar);
-			result.Calendars = new HashSet<Calendar>(
-				parserFactory.Create(EntityParserFactory.SupportedFileNames.Calendar).Parse(calendarTextReader).Cast<Calendar>());
-
-			var calendarDatesTextReader = GetTextReader(feedPath, EntityParserFactory.SupportedFileNames.CalendarDates);
-			result.CalendarDates = new HashSet<CalendarDate>(
-				parserFactory.Create(EntityParserFactory.SupportedFileNames.CalendarDates).Parse(calendarDatesTextReader).Cast<CalendarDate>());
-
-			var fareAttributesTextReader = GetTextReader(feedPath, EntityParserFactory.SupportedFileNames.FareAttributes);
-			result.FareAttributes = new HashSet<FareAttribute>(
-				parserFactory.Create(EntityParserFactory.SupportedFileNames.FareAttributes).Parse(fareAttributesTextReader).Cast<FareAttribute>());
+			result.Agencies = GetParsedList<Agency>(feedPath);
+			result.Calendars = GetParsedList<Calendar>(feedPath);
+			result.CalendarDates = GetParsedList<CalendarDate>(feedPath);
+			result.FareAttributes = GetParsedList<FareAttribute>(feedPath);
 
 			return result;
 		}
 
-		public TextReader GetTextReader(string feedPath, string fileName)
+		private HashSet<T> GetParsedList<T>(string feedPath)
 		{
+			var textReader = GetTextReader<T>(feedPath);
+			var entityParser = new EntityParserFactory().Create(EntityParserFactory.SupportedFileNames.GetFileNameByType<T>());
+			return new HashSet<T>(entityParser.Parse(textReader).Cast<T>());
+		}
+
+		public TextReader GetTextReader<T>(string feedPath)
+		{
+			string fileName = EntityParserFactory.SupportedFileNames.GetFileNameByType<T>();
 			var testFilePath = Path.Combine(feedPath, fileName);
 			return File.OpenText(testFilePath);
 		}
