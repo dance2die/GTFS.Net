@@ -52,15 +52,33 @@ namespace Project.GtfsNet.Test.Tests.Parsers
 
 			_output.WriteLine("feed.FareAttributes.Count: {0}", feed.FareAttributes.Count);
 			Assert.NotEmpty(feed.FareAttributes);
-			//Assert.NotEmpty(feed.FareRules);
-			//Assert.NotEmpty(feed.FeedInfos);
-			//Assert.NotEmpty(feed.Frequencies);
-			//Assert.NotEmpty(feed.Routes);
-			//Assert.NotEmpty(feed.Shapes);
-			//Assert.NotEmpty(feed.Stops);
-			//Assert.NotEmpty(feed.StopTimes);
-			//Assert.NotEmpty(feed.Transfers);
-			//Assert.NotEmpty(feed.Trips);
+
+			_output.WriteLine("feed.FareRules.Count: {0}", feed.FareRules.Count);
+			Assert.NotEmpty(feed.FareRules);
+
+			_output.WriteLine("feed.FeedInfos.Count: {0}", feed.FeedInfos.Count);
+			Assert.NotEmpty(feed.FeedInfos);
+
+			_output.WriteLine("feed.Frequencies.Count: {0}", feed.Frequencies.Count);
+			Assert.NotEmpty(feed.Frequencies);
+
+			_output.WriteLine("feed.Routes.Count: {0}", feed.Routes.Count);
+			Assert.NotEmpty(feed.Routes);
+
+			_output.WriteLine("feed.Shapes.Count: {0}", feed.Shapes.Count);
+			Assert.NotEmpty(feed.Shapes);
+
+			_output.WriteLine("feed.Stops.Count: {0}", feed.Stops.Count);
+			Assert.NotEmpty(feed.Stops);
+
+			_output.WriteLine("feed.StopTimes.Count: {0}", feed.StopTimes.Count);
+			Assert.NotEmpty(feed.StopTimes);
+
+			_output.WriteLine("feed.Transfers.Count: {0}", feed.Transfers.Count);
+			Assert.NotEmpty(feed.Transfers);
+
+			_output.WriteLine("feed.Trips.Count: {0}", feed.Trips.Count);
+			Assert.NotEmpty(feed.Trips);
 		}
 	}
 }

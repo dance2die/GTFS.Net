@@ -15,6 +15,15 @@ namespace Project.GtfsNet.Parsers
 			result.Calendars = GetParsedList<Calendar>(feedPath);
 			result.CalendarDates = GetParsedList<CalendarDate>(feedPath);
 			result.FareAttributes = GetParsedList<FareAttribute>(feedPath);
+			result.FareRules = GetParsedList<FareRule>(feedPath);
+			result.FeedInfos = GetParsedList<FeedInfo>(feedPath);
+			result.Frequencies = GetParsedList<Frequency>(feedPath);
+			result.Routes = GetParsedList<Route>(feedPath);
+			result.Shapes = GetParsedList<Shape>(feedPath);
+			result.Stops = GetParsedList<Stop>(feedPath);
+			result.StopTimes = GetParsedList<StopTime>(feedPath);
+			result.Transfers = GetParsedList<Transfer>(feedPath);
+			result.Trips = GetParsedList<Trip>(feedPath);
 
 			return result;
 		}
