@@ -7,6 +7,9 @@ namespace Project.GtfsNet.Parsers
 {
 	public class GtfsFeedParser
 	{
+		/// <summary>
+		/// @ToDo: Convert the parser to use Visitor pattern instead.
+		/// </summary>
 		public GtfsFeed Parse(string feedPath)
 		{
 			var result = new GtfsFeed
