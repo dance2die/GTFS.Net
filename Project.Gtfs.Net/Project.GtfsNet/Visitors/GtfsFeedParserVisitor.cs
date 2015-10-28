@@ -129,7 +129,7 @@ namespace Project.GtfsNet.Visitors
 			return File.OpenText(testFilePath);
 		}
 
-		public IEntityParser<IEntity> GetEntityParser<T>()
+		private IEntityParser<IEntity> GetEntityParser<T>()
 		{
 			return new EntityParserFactory().Create(
 				EntityParserFactory.SupportedFileNames.GetFileNameByType<T>());
