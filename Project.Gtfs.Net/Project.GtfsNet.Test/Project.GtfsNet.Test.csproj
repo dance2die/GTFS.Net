@@ -95,7 +95,7 @@
     <Compile Include="Tests\Parsers\FeedInfoParserTest.cs" />
     <Compile Include="Tests\Parsers\FrequenciesParserTest.cs" />
     <Compile Include="Tests\Parsers\GtfsFeedParserTest.cs" />
-    <Compile Include="Visitors\GtfsFeedVistorTest.cs" />
+    <Compile Include="Tests\Visitors\GtfsFeedVistorTest.cs" />
     <Compile Include="Tests\Parsers\ParserTestBase.cs" />
     <Compile Include="Tests\Parsers\RoutesParserTest.cs" />
     <Compile Include="Tests\Parsers\ShapesParserTest.cs" />
@@ -103,7 +103,7 @@
     <Compile Include="Tests\Parsers\StopTimesParser.cs" />
     <Compile Include="Tests\Parsers\TransfersParserTest.cs" />
     <Compile Include="Tests\Parsers\TripsParserTest.cs" />
-    <Compile Include="Visitors\RequiredFileVisitorTest.cs" />
+    <Compile Include="Tests\Visitors\RequiredFileVisitorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="feeds\lirr\agency.txt">

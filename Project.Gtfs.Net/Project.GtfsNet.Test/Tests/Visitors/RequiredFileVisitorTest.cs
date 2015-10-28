@@ -1,6 +1,6 @@
 ﻿using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Visitors
+namespace Project.GtfsNet.Test.Tests.Visitors
 {
 	/// <summary>
 	/// Test if all required files are parsed.

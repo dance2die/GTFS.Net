@@ -2,7 +2,7 @@
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Visitors
+namespace Project.GtfsNet.Test.Tests.Visitors
 {
 	public class GtfsFeedVistorTest
 	{
