@@ -49,6 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\AgencyCollection.cs" />
+    <Compile Include="Collections\CalendarCollection.cs" />
+    <Compile Include="Collections\CalendarDateCollection.cs" />
+    <Compile Include="Collections\FareAttributeCollection.cs" />
+    <Compile Include="Collections\FareRuleCollection.cs" />
+    <Compile Include="Collections\FeedInfoCollection.cs" />
+    <Compile Include="Collections\FrequencyCollection.cs" />
+    <Compile Include="Collections\RouteCollection.cs" />
+    <Compile Include="Collections\ShapeCollection.cs" />
+    <Compile Include="Collections\StopCollection.cs" />
+    <Compile Include="Collections\StopTimeCollection.cs" />
+    <Compile Include="Collections\TransferCollection.cs" />
+    <Compile Include="Collections\TripCollection.cs" />
     <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\Calendar.cs" />
     <Compile Include="Entities\CalendarDate.cs" />
@@ -58,7 +71,7 @@
     <Compile Include="Entities\FeedInfo.cs" />
     <Compile Include="Entities\Frequency.cs" />
     <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Entities\IVisitor.cs" />
+    <Compile Include="Visitors\IFeedVisitor.cs" />
     <Compile Include="Entities\Maps\FareAttributesMap.cs" />
     <Compile Include="Entities\Maps\FareRulesMap.cs" />
     <Compile Include="Entities\Maps\FeedInfoMap.cs" />
@@ -94,6 +107,7 @@
     <Compile Include="Parsers\GtfsFeedParser.cs" />
     <Compile Include="Parsers\IEntityParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visitors\GtfsFeedVisitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
