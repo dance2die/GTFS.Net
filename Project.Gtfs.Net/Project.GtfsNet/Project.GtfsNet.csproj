@@ -107,7 +107,7 @@
     <Compile Include="Parsers\GtfsFeedParser.cs" />
     <Compile Include="Parsers\IEntityParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Visitors\GtfsFeedVisitor.cs" />
+    <Compile Include="Visitors\GtfsFeedParserVisitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -7,13 +7,13 @@ namespace Project.GtfsNet.Test.Tests.Parsers
 	public class GtfsFeedVistorTest
 	{
 		private readonly ITestOutputHelper _output;
-		private readonly GtfsFeedVisitor _sut;
+		private readonly GtfsFeedParserVisitor _sut;
 		private const string FEED_PATH = "feeds/subway";
 
 		public GtfsFeedVistorTest(ITestOutputHelper output)
 		{
 			_output = output;
-			_sut = new GtfsFeedVisitor(FEED_PATH);
+			_sut = new GtfsFeedParserVisitor(FEED_PATH);
 		}
 
 		[Fact]

@@ -6,12 +6,12 @@ using Project.GtfsNet.Parsers;
 
 namespace Project.GtfsNet.Visitors
 {
-	public class GtfsFeedVisitor : IFeedVisitor
+	public class GtfsFeedParserVisitor : IFeedVisitor
 	{
 		private readonly string _feedPath;
 		public GtfsFeed Feed { get; }
 
-		public GtfsFeedVisitor(string feedPath)
+		public GtfsFeedParserVisitor(string feedPath)
 		{
 			_feedPath = feedPath;
 			Feed = new GtfsFeed();
