@@ -24,6 +24,7 @@ namespace Project.GtfsNet.Test.Tests.Parsers
 		{
 			GtfsFeed feed = new GtfsFeed();
 			feed.Accept(_sut);
+			feed = _sut.Feed;
 
 			Assert.NotNull(feed.Agencies);
 			Assert.NotNull(feed.Calendars);
