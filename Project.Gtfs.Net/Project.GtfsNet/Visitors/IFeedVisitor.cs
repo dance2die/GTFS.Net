@@ -4,7 +4,7 @@ namespace Project.GtfsNet.Visitors
 {
 	public interface IFeedVisitor
 	{
-		void Visit(AgencyCollection stops);
+		void Visit(AgencyCollection agencies);
 		void Visit(StopCollection stops);
 		void Visit(RouteCollection routes);
 		void Visit(TripCollection trips);
