@@ -17,16 +17,6 @@ namespace Project.GtfsNet.Visitors
 			Feed = new GtfsFeed();
 		}
 
-		//private void SetParsedList<T>(string feedPath, out parsedList)
-		//{
-		//	using (var textReader = GetTextReader<T>(feedPath))
-		//	{
-		//		var entityParser = new EntityParserFactory().Create(
-		//			EntityParserFactory.SupportedFileNames.GetFileNameByType<T>());
-		//		return new HashSet<T>(entityParser.Parse(textReader).Cast<T>());
-		//	}
-		//}
-
 		public void Visit(AgencyCollection agencies)
 		{
 			using (var textReader = GetTextReader<Agency>(_feedPath))
