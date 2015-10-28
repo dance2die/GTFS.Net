@@ -95,7 +95,7 @@
     <Compile Include="Tests\Parsers\FeedInfoParserTest.cs" />
     <Compile Include="Tests\Parsers\FrequenciesParserTest.cs" />
     <Compile Include="Tests\Parsers\GtfsFeedParserTest.cs" />
-    <Compile Include="Tests\Parsers\GtfsFeedVistorTest.cs" />
+    <Compile Include="Visitors\GtfsFeedVistorTest.cs" />
     <Compile Include="Tests\Parsers\ParserTestBase.cs" />
     <Compile Include="Tests\Parsers\RoutesParserTest.cs" />
     <Compile Include="Tests\Parsers\ShapesParserTest.cs" />

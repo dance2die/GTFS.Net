@@ -15,4 +15,5 @@ namespace Project.GtfsNet.Parsers
 
 			return parser.Feed;
 		}
+	}
 }
