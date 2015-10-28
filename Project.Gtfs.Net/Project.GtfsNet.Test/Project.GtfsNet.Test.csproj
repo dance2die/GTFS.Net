@@ -103,6 +103,7 @@
     <Compile Include="Tests\Parsers\StopTimesParser.cs" />
     <Compile Include="Tests\Parsers\TransfersParserTest.cs" />
     <Compile Include="Tests\Parsers\TripsParserTest.cs" />
+    <Compile Include="Visitors\RequiredFileVisitorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="feeds\lirr\agency.txt">
