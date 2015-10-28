@@ -67,10 +67,4 @@ namespace Project.GtfsNet
 			FeedInfos.Accept(visitor);
 		}
 	}
-
-	
-	public interface IFeedElement
-	{
-		void Accept(IFeedVisitor visitor);
-	}
 }
