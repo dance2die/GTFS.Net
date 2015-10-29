@@ -11,7 +11,8 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 	/// </summary>
 	public class RequiredFileVisitorTest
 	{
-		private const string FEED_PATH = "feeds/subway";
+		private const string GOOD_FEED_PATH = "feeds/subway";
+		private const string BAD_FEED_PATH = "feeds/missingRequiredFiles";
 
 		private readonly ITestOutputHelper _output;
 
@@ -24,12 +25,24 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		public void WhenAllFilesAreParsedAllRequiredFilesShoulNotBeEmpty()
 		{
 			var parser = new GtfsFeedParser();
-			var feed = parser.Parse(FEED_PATH);
+			var feed = parser.Parse(GOOD_FEED_PATH);
 			RequiredFileVisitor sut = new RequiredFileVisitor();
 
 			feed.Accept(sut);
 
 			Assert.True(sut.IsValid);
+		}
+
+		[Fact]
+		public void WhenFeedPathMissesRequiredFilesThenValidatorReportsNotValid()
+		{
+			var parser = new GtfsFeedParser();
+			var feed = parser.Parse(BAD_FEED_PATH);
+			RequiredFileVisitor sut = new RequiredFileVisitor();
+
+			feed.Accept(sut);
+
+			Assert.False(sut.IsValid);
 		}
 
 		[Fact]
