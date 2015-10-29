@@ -3,7 +3,7 @@ using Project.GtfsNet.Collections;
 namespace Project.GtfsNet.Visitors
 {
 	/// <summary>
-	/// Validates GTFS Feed
+	/// Check if all required files have any record in GTFS feed
 	/// </summary>
 	public class RequiredFileVisitor : IFeedVisitor
 	{
