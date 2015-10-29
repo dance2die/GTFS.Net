@@ -22,7 +22,7 @@ namespace Project.GtfsNet.Visitors
 		/// </summary>
 		public bool IsValid { get; private set; } = true;
 
-		public List<string> UnparsedFiles { get; private set; } = new List<string>();
+		public List<string> UnparsedFiles { get; } = new List<string>();
 
 		private void SetValidity<T>(HashSet<T> collection) where T : Entity
 		{
