@@ -64,9 +64,6 @@ namespace Project.GtfsNet.Visitors
 
 		public void Visit(CalendarCollection calendars)
 		{
-			//if (!IsValid) return;
-
-			//IsValid = calendars.Count >= 1;
 			SetValidity(calendars);
 		}
 
