@@ -76,6 +76,21 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			Assert.Contains(SupportedFileNames.Calendar, sut.UnparsedFiles);
 		}
 
+		[Fact]
+		public void GoodFeedPathreturnsNoUnparsedFileAndIsValid()
+		{
+			var parser = new GtfsFeedParser();
+			var feed = parser.Parse(GOOD_FEED_PATH);
+			RequiredFileVisitor sut = new RequiredFileVisitor();
+
+			feed.Accept(sut);
+			PrintUnparsedFiles(sut);
+
+			Assert.True(sut.UnparsedFiles.Count == 0);
+			Assert.True(sut.IsValid);
+		}
+
+
 		private void PrintUnparsedFiles(RequiredFileVisitor sut)
 		{
 			foreach (string unparsedFile in sut.UnparsedFiles)
