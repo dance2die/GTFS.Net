@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests.Visitors
@@ -15,5 +16,8 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		{
 			_output = output;
 		}
+
+		//[Fact]
+		//public void 
 	}
 }

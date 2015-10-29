@@ -71,6 +71,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Fixtures\VisitorPathFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\Entities\AgencyEqualityTest.cs" />
     <Compile Include="Tests\Entities\CalendarDateEqualityTest.cs" />
@@ -189,9 +190,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fixtures\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Project.GtfsNet\Project.GtfsNet.csproj">
       <Project>{29421eb2-5e0e-4345-9423-8d7b9dbffc35}</Project>

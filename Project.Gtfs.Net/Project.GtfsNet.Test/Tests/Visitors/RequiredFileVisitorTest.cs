@@ -1,4 +1,5 @@
 ﻿using Project.GtfsNet.Parsers;
+using Project.GtfsNet.Test.Fixtures;
 using Project.GtfsNet.Visitors;
 using Xunit;
 using Xunit.Abstractions;
@@ -9,24 +10,22 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 	/// Test if all required files are parsed.
 	/// Required file list can be found here.<see cref="https://developers.google.com/transit/gtfs/reference#feed-files"/>
 	/// </summary>
-	public class RequiredFileVisitorTest
+	public class RequiredFileVisitorTest : IClassFixture<VisitorPathFixture>
 	{
-		private const string GOOD_FEED_PATH = "feeds/subway";
-		private const string BAD_FEED_PATH = "feeds/missingRequiredFiles";
-		private const string NON_EXISTING_FEED_PATH = "feeds";
-
 		private readonly ITestOutputHelper _output;
+		private readonly VisitorPathFixture _visitorPathFixture;
 
-		public RequiredFileVisitorTest(ITestOutputHelper output)
+		public RequiredFileVisitorTest(ITestOutputHelper output, VisitorPathFixture visitorPathFixture)
 		{
 			_output = output;
+			_visitorPathFixture = visitorPathFixture;
 		}
 
 		[Fact]
 		public void WhenAllFilesAreParsedAllRequiredFilesShoulNotBeEmpty()
 		{
 			var parser = new GtfsFeedParser();
-			var feed = parser.Parse(GOOD_FEED_PATH);
+			var feed = parser.Parse(_visitorPathFixture.GoodFeedPath);
 			RequiredFileVisitor sut = new RequiredFileVisitor();
 
 			feed.Accept(sut);
@@ -38,7 +37,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		public void WhenFeedPathMissesRequiredFilesThenValidatorReportsNotValid()
 		{
 			var parser = new GtfsFeedParser();
-			var feed = parser.Parse(BAD_FEED_PATH);
+			var feed = parser.Parse(_visitorPathFixture.BadFeedPath);
 			RequiredFileVisitor sut = new RequiredFileVisitor();
 
 			feed.Accept(sut);
@@ -62,7 +61,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		public void VisitorShouldReportMissingRequiredFileNames()
 		{
 			var parser = new GtfsFeedParser();
-			var feed = parser.Parse(NON_EXISTING_FEED_PATH);
+			var feed = parser.Parse(_visitorPathFixture.NonExistingFeedPath);
 			RequiredFileVisitor sut = new RequiredFileVisitor();
 
 			feed.Accept(sut);
@@ -80,7 +79,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		public void GoodFeedPathreturnsNoUnparsedFileAndIsValid()
 		{
 			var parser = new GtfsFeedParser();
-			var feed = parser.Parse(GOOD_FEED_PATH);
+			var feed = parser.Parse(_visitorPathFixture.GoodFeedPath);
 			RequiredFileVisitor sut = new RequiredFileVisitor();
 
 			feed.Accept(sut);
