@@ -1,4 +1,7 @@
-﻿using Xunit.Abstractions;
+﻿using Project.GtfsNet.Parsers;
+using Project.GtfsNet.Visitors;
+using Xunit;
+using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests.Visitors
 {
@@ -8,6 +11,8 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 	/// </summary>
 	public class RequiredFileVisitorTest
 	{
+		private const string FEED_PATH = "feeds/subway";
+
 		private readonly ITestOutputHelper _output;
 
 		public RequiredFileVisitorTest(ITestOutputHelper output)
@@ -15,6 +20,16 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_output = output;
 		}
 
+		[Fact]
+		public void WhenAllFilesAreParsedAllRequiredFilesShoulNotBeEmpty()
+		{
+			var parser = new GtfsFeedParser();
+			var feed = parser.Parse(FEED_PATH);
 
+			RequiredFileVisitor sut = new RequiredFileVisitor();
+			feed.Accept(sut);
+
+			Assert.True(sut.IsValid);
+		}
 	}
 }
