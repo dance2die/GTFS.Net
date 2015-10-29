@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Project.GtfsNet.Collections;
 using Project.GtfsNet.Entities;
@@ -125,6 +127,8 @@ namespace Project.GtfsNet.Visitors
 		{
 			string fileName = SupportedFileNames.GetFileNameByType<T>();
 			var testFilePath = Path.Combine(feedPath, fileName);
+			if (!File.Exists(testFilePath))
+				return new StringReader(String.Empty);
 			return File.OpenText(testFilePath);
 		}
 

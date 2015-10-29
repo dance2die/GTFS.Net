@@ -28,31 +28,43 @@ namespace Project.GtfsNet.Visitors
 
 		public void Visit(AgencyCollection agencies)
 		{
-			IsValid = agencies.Count >= 1;
+			if (!IsValid) return;
+
+            IsValid = agencies.Count >= 1;
 		}
 
 		public void Visit(StopCollection stops)
 		{
+			if (!IsValid) return;
+
 			IsValid = stops.Count >= 1;
 		}
 
 		public void Visit(RouteCollection routes)
 		{
+			if (!IsValid) return;
+
 			IsValid = routes.Count >= 1;
 		}
 
 		public void Visit(TripCollection trips)
 		{
+			if (!IsValid) return;
+
 			IsValid = trips.Count >= 1;
 		}
 
 		public void Visit(StopTimeCollection stopTimes)
 		{
+			if (!IsValid) return;
+
 			IsValid = stopTimes.Count >= 1;
 		}
 
 		public void Visit(CalendarCollection calendars)
 		{
+			if (!IsValid) return;
+
 			IsValid = calendars.Count >= 1;
 		}
 
