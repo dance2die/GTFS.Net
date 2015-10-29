@@ -119,12 +119,11 @@ namespace Project.GtfsNet.Visitors
 			{
 				Feed.FeedInfos = new FeedInfoCollection(GetEntityParser<FeedInfo>().Parse(textReader).Cast<FeedInfo>());
 			}
-
 		}
 
 		private TextReader GetTextReader<T>(string feedPath)
 		{
-			string fileName = EntityParserFactory.SupportedFileNames.GetFileNameByType<T>();
+			string fileName = SupportedFileNames.GetFileNameByType<T>();
 			var testFilePath = Path.Combine(feedPath, fileName);
 			return File.OpenText(testFilePath);
 		}
@@ -132,7 +131,7 @@ namespace Project.GtfsNet.Visitors
 		private IEntityParser<IEntity> GetEntityParser<T>()
 		{
 			return new EntityParserFactory().Create(
-				EntityParserFactory.SupportedFileNames.GetFileNameByType<T>());
+				SupportedFileNames.GetFileNameByType<T>());
 		}
 	}
 }

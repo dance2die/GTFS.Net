@@ -14,5 +14,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		{
 			_output = output;
 		}
+
+
 	}
 }
