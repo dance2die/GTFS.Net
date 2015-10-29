@@ -25,11 +25,22 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		{
 			var parser = new GtfsFeedParser();
 			var feed = parser.Parse(FEED_PATH);
-
 			RequiredFileVisitor sut = new RequiredFileVisitor();
+
 			feed.Accept(sut);
 
 			Assert.True(sut.IsValid);
+		}
+
+		[Fact]
+		public void EmptyFeedShouldBeInvalid()
+		{
+			RequiredFileVisitor sut = new RequiredFileVisitor();
+
+			GtfsFeed emptyFeed = new GtfsFeed();
+			emptyFeed.Accept(sut);
+
+			Assert.False(sut.IsValid);
 		}
 	}
 }
