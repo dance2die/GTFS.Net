@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Project.GtfsNet.Collections;
 
 namespace Project.GtfsNet.Visitors
@@ -13,19 +12,19 @@ namespace Project.GtfsNet.Visitors
 		/// </summary>
 		public bool IsValid { get; private set; } = true;
 
-		/// <summary>
-		/// Required file names.
-		/// Reference: <see cref="https://developers.google.com/transit/gtfs/reference#feed-files"/>
-		/// </summary>
-		public List<string> RequiredFiles { get; } = new List<string>
-		{
-			SupportedFileNames.Agency,
-			SupportedFileNames.Stops,
-			SupportedFileNames.Routes,
-			SupportedFileNames.Trips,
-			SupportedFileNames.StopTimes,
-			SupportedFileNames.Calendar,
-		};
+		///// <summary>
+		///// Required file names.
+		///// Reference: <see cref="https://developers.google.com/transit/gtfs/reference#feed-files"/>
+		///// </summary>
+		//public List<string> RequiredFiles { get; } = new List<string>
+		//{
+		//	SupportedFileNames.Agency,
+		//	SupportedFileNames.Stops,
+		//	SupportedFileNames.Routes,
+		//	SupportedFileNames.Trips,
+		//	SupportedFileNames.StopTimes,
+		//	SupportedFileNames.Calendar,
+		//};
 
 		public void Visit(AgencyCollection agencies)
 		{
