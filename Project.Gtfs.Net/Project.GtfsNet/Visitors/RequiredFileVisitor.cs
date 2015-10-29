@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using Project.GtfsNet.Collections;
+using Project.GtfsNet.Entities;
 
 namespace Project.GtfsNet.Visitors
 {
@@ -11,6 +14,8 @@ namespace Project.GtfsNet.Visitors
 		/// Check if visited feed is valid (when all requiref files are parsed and not empty
 		/// </summary>
 		public bool IsValid { get; private set; } = true;
+
+		public List<string> UnparsedFiles { get; private set; } = new List<string>();
 
 		///// <summary>
 		///// Required file names.
@@ -26,46 +31,50 @@ namespace Project.GtfsNet.Visitors
 		//	SupportedFileNames.Calendar,
 		//};
 
+		private void SetValidity<T>(HashSet<T> collection) where T : Entity
+		{
+			if (collection.Count > 0 && IsValid)
+			{
+				IsValid = collection.Count >= 1;
+			}
+			else
+			{
+				UnparsedFiles.Add(SupportedFileNames.GetFileNameByType<T>());
+				IsValid = false;
+			}
+		}
+
 		public void Visit(AgencyCollection agencies)
 		{
-			if (!IsValid) return;
-
-            IsValid = agencies.Count >= 1;
+			SetValidity(agencies);
 		}
 
 		public void Visit(StopCollection stops)
 		{
-			if (!IsValid) return;
-
-			IsValid = stops.Count >= 1;
+			SetValidity(stops);
 		}
 
 		public void Visit(RouteCollection routes)
 		{
-			if (!IsValid) return;
-
-			IsValid = routes.Count >= 1;
+			SetValidity(routes);
 		}
 
 		public void Visit(TripCollection trips)
 		{
-			if (!IsValid) return;
-
-			IsValid = trips.Count >= 1;
+			SetValidity(trips);
 		}
 
 		public void Visit(StopTimeCollection stopTimes)
 		{
-			if (!IsValid) return;
-
-			IsValid = stopTimes.Count >= 1;
+			SetValidity(stopTimes);
 		}
 
 		public void Visit(CalendarCollection calendars)
 		{
-			if (!IsValid) return;
+			//if (!IsValid) return;
 
-			IsValid = calendars.Count >= 1;
+			//IsValid = calendars.Count >= 1;
+			SetValidity(calendars);
 		}
 
 		public void Visit(CalendarDateCollection calendarDates)
