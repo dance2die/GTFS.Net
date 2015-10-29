@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Project.GtfsNet.Collections;
 using Project.GtfsNet.Entities;
@@ -7,6 +6,14 @@ namespace Project.GtfsNet.Visitors
 {
 	/// <summary>
 	/// Check if all required files have any record in GTFS feed
+	/// 
+	/// There are 6 required files
+	/// 1.) agency.txt
+	/// 2.) stops.txt
+	/// 3.) routes.txt
+	/// 4.) trips.txt
+	/// 5.) stop_times.txt
+	/// 6.) calendar.txt
 	/// </summary>
 	public class RequiredFileVisitor : IFeedVisitor
 	{
@@ -16,20 +23,6 @@ namespace Project.GtfsNet.Visitors
 		public bool IsValid { get; private set; } = true;
 
 		public List<string> UnparsedFiles { get; private set; } = new List<string>();
-
-		///// <summary>
-		///// Required file names.
-		///// Reference: <see cref="https://developers.google.com/transit/gtfs/reference#feed-files"/>
-		///// </summary>
-		//public List<string> RequiredFiles { get; } = new List<string>
-		//{
-		//	SupportedFileNames.Agency,
-		//	SupportedFileNames.Stops,
-		//	SupportedFileNames.Routes,
-		//	SupportedFileNames.Trips,
-		//	SupportedFileNames.StopTimes,
-		//	SupportedFileNames.Calendar,
-		//};
 
 		private void SetValidity<T>(HashSet<T> collection) where T : Entity
 		{
