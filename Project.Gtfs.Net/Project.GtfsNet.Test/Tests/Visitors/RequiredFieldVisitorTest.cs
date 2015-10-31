@@ -4,20 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Project.GtfsNet.Collections;
+using Project.GtfsNet.Test.Fixtures;
 using Project.GtfsNet.Visitors;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Project.GtfsNet.Test.Tests.Visitors
 {
-	public class RequiredFieldVisitorTest
+	public class RequiredFieldVisitorTest : IClassFixture<VisitorPathFixture>
 	{
 		private readonly ITestOutputHelper _output;
+		private readonly VisitorPathFixture _visitorPathFixture;
 		private readonly RequiredFieldVisitor _sut;
 
-		public RequiredFieldVisitorTest(ITestOutputHelper output)
+		public RequiredFieldVisitorTest(ITestOutputHelper output, VisitorPathFixture visitorPathFixture)
 		{
 			_output = output;
+			_visitorPathFixture = visitorPathFixture;
 			_sut = new RequiredFieldVisitor();
 		}
 
