@@ -110,7 +110,9 @@
     <Compile Include="Parsers\IEntityParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Visitors\GtfsFeedParserVisitor.cs" />
+    <Compile Include="Visitors\RequiredFieldVisitor.cs" />
     <Compile Include="Visitors\RequiredFileVisitor.cs" />
+    <Compile Include="Visitors\ValidationEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
