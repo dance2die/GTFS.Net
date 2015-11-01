@@ -88,24 +88,36 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 
 		public void Visit(AgencyCollection agencies)
 		{
-			if (agencies.Count <= 0)
-				OnAgenciesChecked(agencies, new ValidationEventArgs(false));
+			OnAgenciesChecked(agencies, new ValidationEventArgs(CheckValidity(agencies)));
+		}
 
-			foreach (Agency agency in agencies)
+		private bool CheckValidity<T>(HashSet<T> items) where T : Entity
+		{
+			bool result = true;
+
+			if (items.Count <= 0)
 			{
-				IEnumerable<PropertyInfo> requiredProperties = GetRequiredProperties(agency);
-				foreach (PropertyInfo requiredProperty in requiredProperties)
+				result = false;
+			}
+			else
+			{
+				foreach (T item in items)
 				{
-					var value = requiredProperty.GetValue(agency);
-					if (value != null) continue;
+					IEnumerable<PropertyInfo> requiredProperties = GetRequiredProperties(item);
+					foreach (PropertyInfo requiredProperty in requiredProperties)
+					{
+						var value = requiredProperty.GetValue(item);
+						if (value != null) continue;
 
-					OnAgenciesChecked(agencies, new ValidationEventArgs(false));
-					return;
+						result = false;
+						break;
+					}
 				}
 			}
 
-			OnAgenciesChecked(agencies, new ValidationEventArgs(true));
+			return result;
 		}
+
 
 		private IEnumerable<PropertyInfo> GetRequiredProperties(Entity entity)
 		{
