@@ -93,29 +93,17 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 
 		private bool CheckValidity<T>(HashSet<T> items) where T : Entity
 		{
-			bool result = true;
-
 			if (items.Count <= 0)
-			{
-				result = false;
-			}
-			else
-			{
-				foreach (T item in items)
-				{
-					IEnumerable<PropertyInfo> requiredProperties = GetRequiredProperties(item);
-					foreach (PropertyInfo requiredProperty in requiredProperties)
-					{
-						var value = requiredProperty.GetValue(item);
-						if (value != null) continue;
+				return false;
 
-						result = false;
-						break;
-					}
-				}
+			foreach (T item in items)
+			{
+				IEnumerable<PropertyInfo> requiredProperties = GetRequiredProperties(item);
+				if (requiredProperties.Any(requiredProperty => requiredProperty.GetValue(item) == null))
+					return false;
 			}
 
-			return result;
+			return true;
 		}
 
 
