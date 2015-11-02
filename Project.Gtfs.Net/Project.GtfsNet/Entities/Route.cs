@@ -9,7 +9,6 @@ namespace Project.GtfsNet.Entities
 		[Required]
 		public string Id { get; set; }
 
-		[Required]
 		public string AgencyId { get; set; }
 
 		[Required]
@@ -18,7 +17,6 @@ namespace Project.GtfsNet.Entities
 		[Required]
 		public string LongName { get; set; }
 
-		[Required]
 		public string Description { get; set; }
 
 		[Required]

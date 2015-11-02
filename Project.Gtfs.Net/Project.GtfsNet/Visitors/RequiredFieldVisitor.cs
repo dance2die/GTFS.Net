@@ -15,15 +15,21 @@ namespace Project.GtfsNet.Visitors
 	{
 		public event EventHandler<ValidationEventArgs> AgenciesChecked;
 		public event EventHandler<ValidationEventArgs> StopsChecked;
+		public event EventHandler<ValidationEventArgs> RoutesChecked;
 
 		protected virtual void OnAgenciesChecked(AgencyCollection agencies, ValidationEventArgs e)
 		{
 			AgenciesChecked?.Invoke(agencies, e);
 		}
 
-		protected virtual void OnAgenciesChecked(StopCollection stops, ValidationEventArgs e)
+		protected virtual void OnStopsChecked(StopCollection stops, ValidationEventArgs e)
 		{
 			StopsChecked?.Invoke(stops, e);
+		}
+
+		protected virtual void OnRoutesChecked(RouteCollection routes, ValidationEventArgs e)
+		{
+			RoutesChecked?.Invoke(routes, e);
 		}
 
 		public void Visit(AgencyCollection agencies)
@@ -33,12 +39,12 @@ namespace Project.GtfsNet.Visitors
 
 		public void Visit(StopCollection stops)
 		{
-			OnAgenciesChecked(stops, new ValidationEventArgs(CheckValidity(stops)));
+			OnStopsChecked(stops, new ValidationEventArgs(CheckValidity(stops)));
 		}
 
 		public void Visit(RouteCollection routes)
 		{
-
+			OnRoutesChecked(routes, new ValidationEventArgs(CheckValidity(routes)));
 		}
 
 		public void Visit(TripCollection trips)
@@ -99,8 +105,11 @@ namespace Project.GtfsNet.Visitors
 			foreach (T item in items)
 			{
 				IEnumerable<PropertyInfo> requiredProperties = GetRequiredProperties(item);
-				if (requiredProperties.Any(requiredProperty => requiredProperty.GetValue(item) == null))
-					return false;
+				foreach (var requiredProperty in requiredProperties)
+				{
+					if (requiredProperty.GetValue(item) == null)
+						return false;
+				}
 			}
 
 			return true;
