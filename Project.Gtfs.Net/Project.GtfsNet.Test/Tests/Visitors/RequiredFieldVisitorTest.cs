@@ -53,6 +53,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.CalendarDatesChecked += (calendarDatess, args) => validFlags.Add(args.IsValid);
 			_sut.FareAttributesChecked += (fareAttributes, args) => validFlags.Add(args.IsValid);
 			_sut.FareRulesChecked += (fareRules, args) => validFlags.Add(args.IsValid);
+			_sut.ShapesChecked += (shapes, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedGood.Accept(_sut);
 
@@ -72,6 +73,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.CalendarDatesChecked += (calendarDatess, args) => validFlags.Add(args.IsValid);
 			_sut.FareAttributesChecked += (fareAttributes, args) => validFlags.Add(args.IsValid);
 			_sut.FareRulesChecked += (fareRules, args) => validFlags.Add(args.IsValid);
+			_sut.ShapesChecked += (shapes, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedNonExisting.Accept(_sut);
 
