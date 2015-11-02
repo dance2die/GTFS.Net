@@ -63,7 +63,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 
 			_parsedFeedNonExisting.Accept(_sut);
 
-			Assert.True(validFlags.Any(flag => flag == false));
+			Assert.True(validFlags.All(flag => flag == false));
 		}
 	}
 }
