@@ -21,6 +21,7 @@ namespace Project.GtfsNet.Visitors
 		public event EventHandler<ValidationEventArgs> CalendarsChecked;
 		public event EventHandler<ValidationEventArgs> CalendarDatesChecked;
 		public event EventHandler<ValidationEventArgs> FareAttributesChecked;
+		public event EventHandler<ValidationEventArgs> FareRulesChecked;
 
 		protected virtual void OnAgenciesChecked(AgencyCollection agencies, ValidationEventArgs e)
 		{
@@ -60,6 +61,11 @@ namespace Project.GtfsNet.Visitors
 		protected virtual void OnFareAttributesChecked(FareAttributeCollection fareAttributes, ValidationEventArgs e)
 		{
 			FareAttributesChecked?.Invoke(fareAttributes, e);
+		}
+
+		protected virtual void OnFareAttributesChecked(FareRuleCollection fareRules, ValidationEventArgs e)
+		{
+			FareRulesChecked?.Invoke(fareRules, e);
 		}
 
 		public void Visit(AgencyCollection agencies)
@@ -104,7 +110,7 @@ namespace Project.GtfsNet.Visitors
 
 		public void Visit(FareRuleCollection fareRules)
 		{
-
+			OnFareAttributesChecked(fareRules, new ValidationEventArgs(CheckValidity(fareRules)));
 		}
 
 		public void Visit(ShapeCollection shapes)
