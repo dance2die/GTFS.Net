@@ -47,6 +47,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);
 			_sut.StopsChecked += (stops, args) => validFlags.Add(args.IsValid);
 			_sut.RoutesChecked += (routes, args) => validFlags.Add(args.IsValid);
+			_sut.TripsChecked += (routes, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedGood.Accept(_sut);
 
@@ -60,6 +61,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);
 			_sut.StopsChecked += (stops, args) => validFlags.Add(args.IsValid);
 			_sut.RoutesChecked += (routes, args) => validFlags.Add(args.IsValid);
+			_sut.TripsChecked += (routes, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedNonExisting.Accept(_sut);
 
