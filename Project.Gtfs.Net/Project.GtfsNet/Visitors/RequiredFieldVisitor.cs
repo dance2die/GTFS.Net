@@ -23,6 +23,9 @@ namespace Project.GtfsNet.Visitors
 		public event EventHandler<ValidationEventArgs> FareAttributesChecked;
 		public event EventHandler<ValidationEventArgs> FareRulesChecked;
 		public event EventHandler<ValidationEventArgs> ShapesChecked;
+		public event EventHandler<ValidationEventArgs> FrequenciesChecked;
+		public event EventHandler<ValidationEventArgs> TransfersChecked;
+		public event EventHandler<ValidationEventArgs> FeedInfosChecked;
 
 		protected virtual void OnAgenciesChecked(AgencyCollection agencies, ValidationEventArgs e)
 		{
@@ -72,6 +75,21 @@ namespace Project.GtfsNet.Visitors
 		protected virtual void OnShapesChecked(ShapeCollection shapes, ValidationEventArgs e)
 		{
 			ShapesChecked?.Invoke(shapes, e);
+		}
+
+		protected virtual void OnFrequenciesChecked(FrequencyCollection frequencies, ValidationEventArgs e)
+		{
+			FrequenciesChecked?.Invoke(frequencies, e);
+		}
+
+		protected virtual void OnTransfersChecked(TransferCollection transfers, ValidationEventArgs e)
+		{
+			TransfersChecked?.Invoke(transfers, e);
+		}
+
+		protected virtual void OnFeedInfosChecked(FeedInfoCollection feedInfos, ValidationEventArgs e)
+		{
+			FeedInfosChecked?.Invoke(feedInfos, e);
 		}
 
 		public void Visit(AgencyCollection agencies)
@@ -126,17 +144,17 @@ namespace Project.GtfsNet.Visitors
 
 		public void Visit(FrequencyCollection frequencies)
 		{
-
+			OnFrequenciesChecked(frequencies, new ValidationEventArgs(CheckValidity(frequencies)));
 		}
 
 		public void Visit(TransferCollection transfers)
 		{
-
+			OnTransfersChecked(transfers, new ValidationEventArgs(CheckValidity(transfers)));
 		}
 
 		public void Visit(FeedInfoCollection feedInfos)
 		{
-
+			OnFeedInfosChecked(feedInfos, new ValidationEventArgs(CheckValidity(feedInfos)));
 		}
 
 		private bool CheckValidity<T>(HashSet<T> items) where T : Entity

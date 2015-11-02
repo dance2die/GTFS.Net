@@ -54,6 +54,9 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.FareAttributesChecked += (fareAttributes, args) => validFlags.Add(args.IsValid);
 			_sut.FareRulesChecked += (fareRules, args) => validFlags.Add(args.IsValid);
 			_sut.ShapesChecked += (shapes, args) => validFlags.Add(args.IsValid);
+			_sut.FrequenciesChecked += (frequencies, args) => validFlags.Add(args.IsValid);
+			_sut.TransfersChecked += (transfers, args) => validFlags.Add(args.IsValid);
+			_sut.FeedInfosChecked += (feedInfos, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedGood.Accept(_sut);
 
@@ -74,6 +77,9 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.FareAttributesChecked += (fareAttributes, args) => validFlags.Add(args.IsValid);
 			_sut.FareRulesChecked += (fareRules, args) => validFlags.Add(args.IsValid);
 			_sut.ShapesChecked += (shapes, args) => validFlags.Add(args.IsValid);
+			_sut.FrequenciesChecked += (frequencies, args) => validFlags.Add(args.IsValid);
+			_sut.TransfersChecked += (transfers, args) => validFlags.Add(args.IsValid);
+			_sut.FeedInfosChecked += (feedInfos, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedNonExisting.Accept(_sut);
 
