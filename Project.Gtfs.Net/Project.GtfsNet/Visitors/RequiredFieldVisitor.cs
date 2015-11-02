@@ -13,13 +13,17 @@ namespace Project.GtfsNet.Visitors
 	/// </summary>
 	public class RequiredFieldVisitor : IFeedVisitor
 	{
-		public bool IsValid { get; set; } = true;
-
 		public event EventHandler<ValidationEventArgs> AgenciesChecked;
+		public event EventHandler<ValidationEventArgs> StopsChecked;
 
 		protected virtual void OnAgenciesChecked(AgencyCollection agencies, ValidationEventArgs e)
 		{
 			AgenciesChecked?.Invoke(agencies, e);
+		}
+
+		protected virtual void OnAgenciesChecked(StopCollection stops, ValidationEventArgs e)
+		{
+			StopsChecked?.Invoke(stops, e);
 		}
 
 		public void Visit(AgencyCollection agencies)
@@ -27,30 +31,9 @@ namespace Project.GtfsNet.Visitors
 			OnAgenciesChecked(agencies, new ValidationEventArgs(CheckValidity(agencies)));
 		}
 
-		private bool CheckValidity<T>(HashSet<T> items) where T : Entity
-		{
-			if (items.Count <= 0)
-				return false;
-
-			foreach (T item in items)
-			{
-				IEnumerable<PropertyInfo> requiredProperties = GetRequiredProperties(item);
-				if (requiredProperties.Any(requiredProperty => requiredProperty.GetValue(item) == null))
-					return false;
-			}
-
-			return true;
-		}
-
-
-		private IEnumerable<PropertyInfo> GetRequiredProperties(Entity entity)
-		{
-			return entity.GetType().GetProperties().Where((pi, index) => Attribute.IsDefined(pi, typeof(RequiredAttribute)));
-		}
-
 		public void Visit(StopCollection stops)
 		{
-
+			OnAgenciesChecked(stops, new ValidationEventArgs(CheckValidity(stops)));
 		}
 
 		public void Visit(RouteCollection routes)
@@ -106,6 +89,27 @@ namespace Project.GtfsNet.Visitors
 		public void Visit(FeedInfoCollection feedInfos)
 		{
 
+		}
+
+		private bool CheckValidity<T>(HashSet<T> items) where T : Entity
+		{
+			if (items.Count <= 0)
+				return false;
+
+			foreach (T item in items)
+			{
+				IEnumerable<PropertyInfo> requiredProperties = GetRequiredProperties(item);
+				if (requiredProperties.Any(requiredProperty => requiredProperty.GetValue(item) == null))
+					return false;
+			}
+
+			return true;
+		}
+
+
+		private IEnumerable<PropertyInfo> GetRequiredProperties(Entity entity)
+		{
+			return entity.GetType().GetProperties().Where((pi, index) => Attribute.IsDefined(pi, typeof(RequiredAttribute)));
 		}
 	}
 }

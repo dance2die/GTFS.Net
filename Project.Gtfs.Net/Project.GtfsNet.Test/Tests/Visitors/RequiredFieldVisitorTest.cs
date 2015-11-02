@@ -43,16 +43,13 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		[Fact]
 		public void GoodFeedHasValid()
 		{
-			bool isAllValid = true;
-			_sut.AgenciesChecked += (agencies, args) =>
-			{
-				if (isAllValid && !args.IsValid)
-					isAllValid = false;
-			};
+			List<bool> validFlags = new List<bool>();
+			_sut.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);
+			_sut.StopsChecked += (stops, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedGood.Accept(_sut);
 
-			Assert.True(_sut.IsValid);
+			Assert.True(validFlags.All(flag => flag));
 		}
 
 		[Fact]
@@ -60,6 +57,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 		{
 			List<bool> validFlags = new List<bool>();
 			_sut.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);
+			_sut.StopsChecked += (stops, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedNonExisting.Accept(_sut);
 
