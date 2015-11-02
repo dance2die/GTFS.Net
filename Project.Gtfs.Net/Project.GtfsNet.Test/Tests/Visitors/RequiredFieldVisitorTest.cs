@@ -32,14 +32,6 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			return parseVisitor.Feed;
 		}
 
-		//[Fact]
-		//public void GoodFeedHasAllRequiredFields()
-		//{
-		//	_parsedFeedGood.Accept(_sut);
-
-		//	Assert.True(_sut.IsValid);
-		//}
-
 		[Fact]
 		public void GoodFeedHasValid()
 		{
