@@ -50,6 +50,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.TripsChecked += (trips, args) => validFlags.Add(args.IsValid);
 			_sut.StopTimesChecked += (stopTimes, args) => validFlags.Add(args.IsValid);
 			_sut.CalendarsChecked += (calendars, args) => validFlags.Add(args.IsValid);
+			_sut.CalendarDatesChecked += (calendarDatess, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedGood.Accept(_sut);
 
@@ -66,6 +67,7 @@ namespace Project.GtfsNet.Test.Tests.Visitors
 			_sut.TripsChecked += (trips, args) => validFlags.Add(args.IsValid);
 			_sut.StopTimesChecked += (stopTimes, args) => validFlags.Add(args.IsValid);
 			_sut.CalendarsChecked += (calendars, args) => validFlags.Add(args.IsValid);
+			_sut.CalendarDatesChecked += (calendarDatess, args) => validFlags.Add(args.IsValid);
 
 			_parsedFeedNonExisting.Accept(_sut);
 
