@@ -16,14 +16,14 @@ namespace Project.GtfsNet
 
 		private bool ValidateFile(GtfsFeed feed)
 		{
-			RequiredFileVisitor fileVisitor = new RequiredFileVisitor();
+			var fileVisitor = new RequiredFileVisitor();
 			feed.Accept(fileVisitor);
 			return fileVisitor.IsValid;
 		}
 
 		private bool ValidateFields(GtfsFeed feed)
 		{
-			List<bool> validFlags = new List<bool>();
+			var validFlags = new List<bool>();
 			RequiredFieldVisitor requiredFieldVisitor = new RequiredFieldVisitor();
 
 			requiredFieldVisitor.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);

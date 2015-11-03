@@ -88,7 +88,6 @@
     <Compile Include="Tests\Entities\StopTimeEqualityTest.cs" />
     <Compile Include="Tests\Entities\TransferEqualityTest.cs" />
     <Compile Include="Tests\Entities\TripEqualityTest.cs" />
-    <Compile Include="Tests\GtfsFeedValidator.cs" />
     <Compile Include="Tests\GtfsFeedValidatorTest.cs" />
     <Compile Include="Tests\Parsers\AgencyParserTest.cs" />
     <Compile Include="Tests\Parsers\CalendarDatesParserTest.cs" />
