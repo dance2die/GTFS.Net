@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Project.GtfsNet.Visitors;
@@ -6,6 +7,9 @@ namespace Project.GtfsNet
 {
 	public class GtfsFeedValidator
 	{
+		public List<string> UnparsedFiles { get; private set; } = new List<string>();
+		public List<string> FilesMissingRequiredFields { get; private set; } = new List<string>();
+
 		public bool Validate(GtfsFeed feed)
 		{
 			bool isFileValid = ValidateFile(feed);
@@ -18,6 +22,9 @@ namespace Project.GtfsNet
 		{
 			var fileVisitor = new RequiredFileVisitor();
 			feed.Accept(fileVisitor);
+
+			UnparsedFiles = fileVisitor.UnparsedFiles;
+
 			return fileVisitor.IsValid;
 		}
 
@@ -26,9 +33,21 @@ namespace Project.GtfsNet
 			var validFlags = new List<bool>();
 			RequiredFieldVisitor requiredFieldVisitor = new RequiredFieldVisitor();
 
-			requiredFieldVisitor.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.StopsChecked += (stops, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.RoutesChecked += (routes, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.AgenciesChecked += (agencies, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Agency);
+			};
+			requiredFieldVisitor.StopsChecked += (stops, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Stops);
+			};
+			requiredFieldVisitor.RoutesChecked += (routes, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Routes);
+			}
 			requiredFieldVisitor.TripsChecked += (trips, args) => validFlags.Add(args.IsValid);
 			requiredFieldVisitor.StopTimesChecked += (stopTimes, args) => validFlags.Add(args.IsValid);
 			requiredFieldVisitor.CalendarsChecked += (calendars, args) => validFlags.Add(args.IsValid);
@@ -44,5 +63,6 @@ namespace Project.GtfsNet
 
 			return validFlags.All(flag => flag);
 		}
+
 	}
 }

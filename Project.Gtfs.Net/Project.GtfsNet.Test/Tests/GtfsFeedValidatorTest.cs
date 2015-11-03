@@ -1,4 +1,5 @@
-﻿using Project.GtfsNet.Parsers;
+﻿using System;
+using Project.GtfsNet.Parsers;
 using Project.GtfsNet.Test.Fixtures;
 using Xunit;
 using Xunit.Abstractions;
@@ -50,6 +51,18 @@ namespace Project.GtfsNet.Test.Tests
 			bool isValid = _sut.Validate(_parsedFeedNonExisting);
 
 			Assert.False(isValid);
+		}
+
+		[Fact]
+		public void NonExistingFeedReportsBadFiles()
+		{
+			bool isValid = _sut.Validate(_parsedFeedNonExisting);
+
+			Assert.False(isValid);
+			Assert.NotEmpty(_sut.UnparsedFiles);
+
+			throw new Exception();
+			Assert.NotEmpty(_sut.FilesMissingRequiredFields);
 		}
 	}
 }
