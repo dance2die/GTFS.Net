@@ -47,17 +47,57 @@ namespace Project.GtfsNet
 			{
 				validFlags.Add(args.IsValid);
 				FilesMissingRequiredFields.Add(SupportedFileNames.Routes);
-			}
-			requiredFieldVisitor.TripsChecked += (trips, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.StopTimesChecked += (stopTimes, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.CalendarsChecked += (calendars, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.CalendarDatesChecked += (calendarDatess, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.FareAttributesChecked += (fareAttributes, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.FareRulesChecked += (fareRules, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.ShapesChecked += (shapes, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.FrequenciesChecked += (frequencies, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.TransfersChecked += (transfers, args) => validFlags.Add(args.IsValid);
-			requiredFieldVisitor.FeedInfosChecked += (feedInfos, args) => validFlags.Add(args.IsValid);
+			};
+			requiredFieldVisitor.TripsChecked += (trips, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Trips);
+			};
+			requiredFieldVisitor.StopTimesChecked += (stopTimes, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.StopTimes);
+			};
+			requiredFieldVisitor.CalendarsChecked += (calendars, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Calendar);
+			};
+			requiredFieldVisitor.CalendarDatesChecked += (calendarDatess, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.CalendarDates);
+			};
+			requiredFieldVisitor.FareAttributesChecked += (fareAttributes, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.FareAttributes);
+			};
+			requiredFieldVisitor.FareRulesChecked += (fareRules, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.FareRules);
+			};
+			requiredFieldVisitor.ShapesChecked += (shapes, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Shapes);
+			};
+			requiredFieldVisitor.FrequenciesChecked += (frequencies, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Frequencies);
+			};
+			requiredFieldVisitor.TransfersChecked += (transfers, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.Transfers);
+			};
+			requiredFieldVisitor.FeedInfosChecked += (feedInfos, args) =>
+			{
+				validFlags.Add(args.IsValid);
+				FilesMissingRequiredFields.Add(SupportedFileNames.FeedInfo);
+			};
 
 			feed.Accept(requiredFieldVisitor);
 

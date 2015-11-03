@@ -59,9 +59,19 @@ namespace Project.GtfsNet.Test.Tests
 			bool isValid = _sut.Validate(_parsedFeedNonExisting);
 
 			Assert.False(isValid);
+
+			_output.WriteLine("_sut.UnparsedFiles.Count: {0}", _sut.UnparsedFiles.Count);
+			foreach (string unparsedFile in _sut.UnparsedFiles)
+			{
+				_output.WriteLine("\t{0}", unparsedFile);
+			}
 			Assert.NotEmpty(_sut.UnparsedFiles);
 
-			throw new Exception();
+			_output.WriteLine("_sut.FilesMissingRequiredFields.Count: {0}", _sut.FilesMissingRequiredFields.Count);
+			foreach (string filesMissingRequiredField in _sut.FilesMissingRequiredFields)
+			{
+				_output.WriteLine("\t{0}", filesMissingRequiredField);
+			}
 			Assert.NotEmpty(_sut.FilesMissingRequiredFields);
 		}
 	}
