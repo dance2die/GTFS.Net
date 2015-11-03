@@ -71,6 +71,7 @@
     <Compile Include="Entities\FeedInfo.cs" />
     <Compile Include="Entities\Frequency.cs" />
     <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="GtfsFeedValidator.cs" />
     <Compile Include="SupportedFileNames.cs" />
     <Compile Include="Visitors\IFeedElement.cs" />
     <Compile Include="Visitors\IFeedVisitor.cs" />
