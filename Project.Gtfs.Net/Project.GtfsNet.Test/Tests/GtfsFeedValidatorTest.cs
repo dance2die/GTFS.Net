@@ -11,6 +11,7 @@ namespace Project.GtfsNet.Test.Tests
 		private readonly VisitorPathFixture _visitorPathFixture;
 
 		private readonly GtfsFeed _parsedFeedGood;
+		private readonly GtfsFeed _parsedFeedBad;
 		private readonly GtfsFeed _parsedFeedNonExisting;
 
 		private readonly GtfsFeedValidator _sut;
@@ -21,6 +22,7 @@ namespace Project.GtfsNet.Test.Tests
 			_visitorPathFixture = visitorPathFixture;
 
 			_parsedFeedGood = new GtfsFeedParser().Parse(_visitorPathFixture.GoodFeedPath);
+			_parsedFeedBad = new GtfsFeedParser().Parse(_visitorPathFixture.BadFeedPath);
 			_parsedFeedNonExisting = new GtfsFeedParser().Parse(_visitorPathFixture.NonExistingFeedPath);
 
 			_sut = new GtfsFeedValidator();
@@ -32,6 +34,22 @@ namespace Project.GtfsNet.Test.Tests
 			bool isValid = _sut.Validate(_parsedFeedGood);
 
 			Assert.True(isValid);
+		}
+
+		[Fact]
+		public void BadFeedIsInvalid()
+		{
+			bool isValid = _sut.Validate(_parsedFeedBad);
+
+			Assert.False(isValid);
+		}
+
+		[Fact]
+		public void NonExistingFeedIsInvalid()
+		{
+			bool isValid = _sut.Validate(_parsedFeedNonExisting);
+
+			Assert.False(isValid);
 		}
 	}
 }
