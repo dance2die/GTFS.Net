@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Project.GtfsNet.Parsers;
 using Project.GtfsNet.Test.Fixtures;
 using Project.GtfsNet.Visitors;
@@ -32,7 +29,13 @@ namespace Project.GtfsNet.Test.Tests
 			_sut = new GtfsFeedValidator();
 		}
 
+		[Fact]
+		public void GoodFeedIsValid()
+		{
+			bool isValid = _sut.Validate(_parsedFeedGood);
 
+			Assert.True(isValid);
+		}
 	}
 
 	public class GtfsFeedValidator
@@ -44,6 +47,43 @@ namespace Project.GtfsNet.Test.Tests
 		{
 			_fieldVisitor = new RequiredFieldVisitor();
 			_fileVisitor = new RequiredFileVisitor();
+		}
+
+		public bool Validate(GtfsFeed feed)
+		{
+			bool isFileValid = ValidateFile(feed);
+			bool areFieldsValid = ValidateFields(feed);
+
+			return isFileValid && areFieldsValid;
+		}
+
+		private bool ValidateFile(GtfsFeed feed)
+		{
+			feed.Accept(_fileVisitor);
+			return _fileVisitor.IsValid;
+		}
+
+		private bool ValidateFields(GtfsFeed feed)
+		{
+			List<bool> validFlags = new List<bool>();
+			RequiredFieldVisitor requiredFieldVisitor = new RequiredFieldVisitor();
+            requiredFieldVisitor.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.StopsChecked += (stops, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.RoutesChecked += (routes, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.TripsChecked += (trips, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.StopTimesChecked += (stopTimes, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.CalendarsChecked += (calendars, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.CalendarDatesChecked += (calendarDatess, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.FareAttributesChecked += (fareAttributes, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.FareRulesChecked += (fareRules, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.ShapesChecked += (shapes, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.FrequenciesChecked += (frequencies, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.TransfersChecked += (transfers, args) => validFlags.Add(args.IsValid);
+			requiredFieldVisitor.FeedInfosChecked += (feedInfos, args) => validFlags.Add(args.IsValid);
+
+			feed.Accept(requiredFieldVisitor);
+
+			return validFlags.All(flag => flag);
 		}
 	}
 }
