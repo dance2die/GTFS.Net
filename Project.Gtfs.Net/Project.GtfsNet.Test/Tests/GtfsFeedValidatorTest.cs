@@ -40,15 +40,6 @@ namespace Project.GtfsNet.Test.Tests
 
 	public class GtfsFeedValidator
 	{
-		private readonly RequiredFieldVisitor _fieldVisitor;
-		private readonly RequiredFileVisitor _fileVisitor;
-
-		public GtfsFeedValidator()
-		{
-			_fieldVisitor = new RequiredFieldVisitor();
-			_fileVisitor = new RequiredFileVisitor();
-		}
-
 		public bool Validate(GtfsFeed feed)
 		{
 			bool isFileValid = ValidateFile(feed);
@@ -59,14 +50,16 @@ namespace Project.GtfsNet.Test.Tests
 
 		private bool ValidateFile(GtfsFeed feed)
 		{
-			feed.Accept(_fileVisitor);
-			return _fileVisitor.IsValid;
+			RequiredFileVisitor fileVisitor = new RequiredFileVisitor();
+            feed.Accept(fileVisitor);
+			return fileVisitor.IsValid;
 		}
 
 		private bool ValidateFields(GtfsFeed feed)
 		{
 			List<bool> validFlags = new List<bool>();
 			RequiredFieldVisitor requiredFieldVisitor = new RequiredFieldVisitor();
+
             requiredFieldVisitor.AgenciesChecked += (agencies, args) => validFlags.Add(args.IsValid);
 			requiredFieldVisitor.StopsChecked += (stops, args) => validFlags.Add(args.IsValid);
 			requiredFieldVisitor.RoutesChecked += (routes, args) => validFlags.Add(args.IsValid);
