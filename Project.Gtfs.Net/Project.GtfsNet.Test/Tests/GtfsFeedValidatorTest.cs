@@ -1,5 +1,4 @@
-﻿using System;
-using Project.GtfsNet.Parsers;
+﻿using Project.GtfsNet.Parsers;
 using Project.GtfsNet.Test.Fixtures;
 using Xunit;
 using Xunit.Abstractions;
