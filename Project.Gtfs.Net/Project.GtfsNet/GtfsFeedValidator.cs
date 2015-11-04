@@ -7,7 +7,7 @@ namespace Project.GtfsNet
 	public class GtfsFeedValidator
 	{
 		public List<string> UnparsedFiles { get; private set; } = new List<string>();
-		public List<string> FilesMissingRequiredFields { get; private set; } = new List<string>();
+		public List<string> FilesMissingRequiredFields { get; } = new List<string>();
 
 		public bool Validate(GtfsFeed feed)
 		{
@@ -102,6 +102,5 @@ namespace Project.GtfsNet
 
 			return validFlags.All(flag => flag);
 		}
-
 	}
 }
