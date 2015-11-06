@@ -8,7 +8,7 @@ namespace Project.GtfsNet.Demo
 {
 	public class Program2
 	{
-		public static void Main(string[] args)
+		public static void Main()
 		{
 			TestGtfsNet();
 			TestGtfs();
