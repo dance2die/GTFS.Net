@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Project.GtfsNet.Enums;
+using GtfsNet.Enums;
 
-namespace Project.GtfsNet.Entities
+namespace GtfsNet.Entities
 {
 	/// <summary>
 	/// Holds information of a row in stop.txt

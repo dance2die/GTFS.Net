@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using Project.GtfsNet.Collections;
-using Project.GtfsNet.Entities;
-using Project.GtfsNet.Parsers;
+using GtfsNet.Collections;
+using GtfsNet.Entities;
+using GtfsNet.Parsers;
 
-namespace Project.GtfsNet.Visitors
+namespace GtfsNet.Visitors
 {
 	public class GtfsFeedParserVisitor : IFeedVisitor
 	{

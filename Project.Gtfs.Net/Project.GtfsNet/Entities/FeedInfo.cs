@@ -23,7 +23,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Project.GtfsNet.Entities
+namespace GtfsNet.Entities
 {
 	/// <summary>
 	/// Represents additional information about the GTFS feed itself, including publisher, version, and expiration information.

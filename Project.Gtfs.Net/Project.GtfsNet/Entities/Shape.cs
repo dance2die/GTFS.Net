@@ -24,7 +24,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Project.GtfsNet.Entities
+namespace GtfsNet.Entities
 {
 	/// <summary>
 	/// Represents rules for drawing lines on a map to represent a transit organization's routes.

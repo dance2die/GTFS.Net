@@ -22,9 +22,9 @@
 
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Project.GtfsNet.Enums;
+using GtfsNet.Enums;
 
-namespace Project.GtfsNet.Entities
+namespace GtfsNet.Entities
 {
 	/// <summary>
 	/// Represents a rules for making connections at transfer points between routes.

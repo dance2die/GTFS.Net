@@ -1,4 +1,5 @@
-﻿using Project.GtfsNet.Parsers;
+﻿using GtfsNet;
+using GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
 

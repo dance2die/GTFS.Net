@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GtfsNet;
+using GtfsNet.Visitors;
 using Project.GtfsNet.Test.Fixtures;
-using Project.GtfsNet.Visitors;
 using Xunit;
 using Xunit.Abstractions;
 

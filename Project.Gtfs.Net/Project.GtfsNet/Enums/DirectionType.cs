@@ -1,4 +1,4 @@
-namespace Project.GtfsNet.Enums
+namespace GtfsNet.Enums
 {
 	public enum DirectionType
 	{

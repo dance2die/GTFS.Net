@@ -1,4 +1,4 @@
-namespace Project.GtfsNet.Visitors
+namespace GtfsNet.Visitors
 {
 	public class ValidationEventArgs
 	{

@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-namespace Project.GtfsNet.Enums
+namespace GtfsNet.Enums
 {
 	/// <summary>
 	///  Indicates whether passengers are picked up at a stop as part of the normal schedule or whether a pickup at the stop is not available.

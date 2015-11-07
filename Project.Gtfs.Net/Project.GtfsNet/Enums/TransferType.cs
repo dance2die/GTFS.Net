@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-namespace Project.GtfsNet.Enums
+namespace GtfsNet.Enums
 {
 	/// <summary>
 	/// The type of connection for the specified (from_stop_id, to_stop_id) pair.

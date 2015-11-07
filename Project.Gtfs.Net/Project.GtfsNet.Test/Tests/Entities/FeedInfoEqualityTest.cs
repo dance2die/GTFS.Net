@@ -1,4 +1,4 @@
-﻿using Project.GtfsNet.Entities;
+﻿using GtfsNet.Entities;
 using Xunit;
 
 namespace Project.GtfsNet.Test.Tests.Entities

@@ -1,6 +1,6 @@
 ﻿using CsvHelper.Configuration;
 
-namespace Project.GtfsNet.Entities.Maps
+namespace GtfsNet.Entities.Maps
 {
 	public class TransfersMap : CsvClassMap<Transfer>
 	{

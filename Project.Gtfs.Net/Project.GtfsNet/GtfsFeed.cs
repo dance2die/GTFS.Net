@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Project.GtfsNet.Collections;
-using Project.GtfsNet.Entities;
-using Project.GtfsNet.Visitors;
+﻿using System.ComponentModel.DataAnnotations;
+using GtfsNet.Collections;
+using GtfsNet.Visitors;
 
-namespace Project.GtfsNet
+namespace GtfsNet
 {
 	public class GtfsFeed : IFeedElement
 	{

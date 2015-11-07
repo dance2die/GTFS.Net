@@ -1,4 +1,4 @@
-﻿namespace Project.GtfsNet.Entities
+﻿namespace GtfsNet.Entities
 {
 	public interface IEntity
 	{

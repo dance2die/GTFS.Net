@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Project.GtfsNet.Enums;
+using GtfsNet.Enums;
 
-namespace Project.GtfsNet.Entities
+namespace GtfsNet.Entities
 {
 	public class Trip : Entity, IEqualityComparer<Trip>
 	{

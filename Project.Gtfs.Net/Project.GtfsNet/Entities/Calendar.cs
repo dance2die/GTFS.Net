@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Project.GtfsNet.Entities
+namespace GtfsNet.Entities
 {
 	/// <summary>
 	/// Represents a row in calendar.txt

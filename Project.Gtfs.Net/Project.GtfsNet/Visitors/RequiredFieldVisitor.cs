@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using Project.GtfsNet.Collections;
-using Project.GtfsNet.Entities;
+using GtfsNet.Collections;
+using GtfsNet.Entities;
 
-namespace Project.GtfsNet.Visitors
+namespace GtfsNet.Visitors
 {
 	/// <summary>
 	/// This visitor decides if every required field in each object of each collection does exist or not

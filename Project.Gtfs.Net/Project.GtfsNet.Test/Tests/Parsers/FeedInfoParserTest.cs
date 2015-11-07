@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Project.GtfsNet.Entities;
-using Project.GtfsNet.Entities.Maps;
-using Project.GtfsNet.Parsers;
+using GtfsNet.Entities;
+using GtfsNet.Entities.Maps;
+using GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
 

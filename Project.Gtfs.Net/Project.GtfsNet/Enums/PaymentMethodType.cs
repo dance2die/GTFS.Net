@@ -1,4 +1,4 @@
-﻿namespace Project.GtfsNet.Enums
+﻿namespace GtfsNet.Enums
 {
 	/// <summary>
 	/// Indicates when the fare must be paid.

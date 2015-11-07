@@ -1,7 +1,7 @@
 ﻿using System;
-using Project.GtfsNet.Entities;
+using GtfsNet.Entities;
 
-namespace Project.GtfsNet
+namespace GtfsNet
 {
 	public static class SupportedFileNames
 	{

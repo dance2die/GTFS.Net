@@ -5,9 +5,9 @@ using System.Linq;
 using CsvHelper;
 using CsvHelper.Configuration;
 using EnsureThat;
-using Project.GtfsNet.Entities;
+using GtfsNet.Entities;
 
-namespace Project.GtfsNet.Parsers
+namespace GtfsNet.Parsers
 {
 	public class EntityParser<T, TMap> : IEntityParser<T>
 		where T : IEntity

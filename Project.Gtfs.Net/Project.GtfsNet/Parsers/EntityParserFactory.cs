@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using EnsureThat;
-using Project.GtfsNet.Entities;
-using Project.GtfsNet.Entities.Maps;
+using GtfsNet.Entities;
+using GtfsNet.Entities.Maps;
 
-namespace Project.GtfsNet.Parsers
+namespace GtfsNet.Parsers
 {
 	public class EntityParserFactory
 	{

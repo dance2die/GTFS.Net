@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Project.GtfsNet.Collections;
-using Project.GtfsNet.Entities;
+using GtfsNet.Collections;
+using GtfsNet.Entities;
 
-namespace Project.GtfsNet.Visitors
+namespace GtfsNet.Visitors
 {
 	/// <summary>
 	/// Check if all required files have any record in GTFS feed

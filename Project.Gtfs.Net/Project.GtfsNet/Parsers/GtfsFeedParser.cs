@@ -1,6 +1,6 @@
-﻿using Project.GtfsNet.Visitors;
+﻿using GtfsNet.Visitors;
 
-namespace Project.GtfsNet.Parsers
+namespace GtfsNet.Parsers
 {
 	public class GtfsFeedParser
 	{

@@ -1,4 +1,4 @@
-﻿namespace Project.GtfsNet.Enums
+﻿namespace GtfsNet.Enums
 {
 	/// <summary>
 	/// https://developers.google.com/transit/gtfs/reference#stopstxt

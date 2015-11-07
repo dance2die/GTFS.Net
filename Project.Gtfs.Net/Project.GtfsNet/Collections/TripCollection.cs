@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Project.GtfsNet.Entities;
-using Project.GtfsNet.Visitors;
+using GtfsNet.Entities;
+using GtfsNet.Visitors;
 
-namespace Project.GtfsNet.Collections
+namespace GtfsNet.Collections
 {
 	public class TripCollection : HashSet<Trip>, IFeedElement
 	{

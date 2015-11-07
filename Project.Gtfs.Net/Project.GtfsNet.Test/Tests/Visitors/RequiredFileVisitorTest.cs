@@ -1,6 +1,7 @@
-﻿using Project.GtfsNet.Parsers;
+﻿using GtfsNet;
+using GtfsNet.Parsers;
+using GtfsNet.Visitors;
 using Project.GtfsNet.Test.Fixtures;
-using Project.GtfsNet.Visitors;
 using Xunit;
 using Xunit.Abstractions;
 

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 
-namespace Project.GtfsNet.Entities
+namespace GtfsNet.Entities
 {
 	public abstract class Entity : IEntity
 	{

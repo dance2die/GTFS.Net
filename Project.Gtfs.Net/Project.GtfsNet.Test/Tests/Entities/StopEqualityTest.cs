@@ -1,5 +1,5 @@
-﻿using Project.GtfsNet.Entities;
-using Project.GtfsNet.Enums;
+﻿using GtfsNet.Entities;
+using GtfsNet.Enums;
 using Xunit;
 
 namespace Project.GtfsNet.Test.Tests.Entities

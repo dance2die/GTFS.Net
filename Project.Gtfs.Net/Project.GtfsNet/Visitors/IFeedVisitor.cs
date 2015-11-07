@@ -1,6 +1,6 @@
-using Project.GtfsNet.Collections;
+using GtfsNet.Collections;
 
-namespace Project.GtfsNet.Visitors
+namespace GtfsNet.Visitors
 {
 	public interface IFeedVisitor
 	{

@@ -1,7 +1,7 @@
 ﻿using CsvHelper.Configuration;
-using Project.GtfsNet.Parsers;
+using GtfsNet.Parsers;
 
-namespace Project.GtfsNet.Entities.Maps
+namespace GtfsNet.Entities.Maps
 {
 	public class CalendarMap : CsvClassMap<Calendar>
 	{

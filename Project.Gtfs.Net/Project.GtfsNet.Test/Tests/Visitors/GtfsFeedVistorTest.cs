@@ -1,4 +1,5 @@
-﻿using Project.GtfsNet.Visitors;
+﻿using GtfsNet;
+using GtfsNet.Visitors;
 using Xunit;
 using Xunit.Abstractions;
 
