@@ -2,8 +2,10 @@
 General Transit Feed Specification ([GTFS](https://developers.google.com/transit/gtfs/)) data parser
 
 ## How to Install
-Install-Package [GtfsNet](https://www.nuget.org/packages/GtfsNet)
-
+Install via [NuGet](https://www.nuget.org/packages/GtfsNet).
+```
+  Install-Package GtfsNet
+```
 ## Example
 1. Create a parser
 2. parse specified folder location ("feeds/subway" in the example below)
