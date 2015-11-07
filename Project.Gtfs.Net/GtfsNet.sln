@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.GtfsNet", "Project.GtfsNet\Project.GtfsNet.csproj", "{29421EB2-5E0E-4345-9423-8D7B9DBFFC35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GtfsNet", "Project.GtfsNet\GtfsNet.csproj", "{29421EB2-5E0E-4345-9423-8D7B9DBFFC35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.GtfsNet.Test", "Project.GtfsNet.Test\Project.GtfsNet.Test.csproj", "{6280B412-EC10-4C88-A9F6-BD66DA00A211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GtfsNet.Test", "Project.GtfsNet.Test\GtfsNet.Test.csproj", "{6280B412-EC10-4C88-A9F6-BD66DA00A211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.GtfsNet.Demo", "Project.GtfsNet.Demo\Project.GtfsNet.Demo.csproj", "{A594B284-4C85-4E4A-B582-62D8C4CD3FFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GtfsNet.Demo", "Project.GtfsNet.Demo\GtfsNet.Demo.csproj", "{A594B284-4C85-4E4A-B582-62D8C4CD3FFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -192,9 +192,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Project.GtfsNet\Project.GtfsNet.csproj">
+    <ProjectReference Include="..\Project.GtfsNet\GtfsNet.csproj">
       <Project>{29421eb2-5e0e-4345-9423-8d7b9dbffc35}</Project>
-      <Name>Project.GtfsNet</Name>
+      <Name>GtfsNet</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

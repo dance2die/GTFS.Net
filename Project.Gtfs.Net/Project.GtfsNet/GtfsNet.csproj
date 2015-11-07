@@ -8,8 +8,8 @@
     <ProjectGuid>{29421EB2-5E0E-4345-9423-8D7B9DBFFC35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Project.GtfsNet</RootNamespace>
-    <AssemblyName>Project.GtfsNet</AssemblyName>
+    <RootNamespace>GtfsNet</RootNamespace>
+    <AssemblyName>GtfsNet</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
