@@ -1,9 +1,11 @@
 # GTFS.Net
 General Transit Feed Specification (GTFS) data parser
 
-# Version 1 has been released to NuGet
+## Version 1 has been released to NuGet
 https://www.nuget.org/packages/GtfsNet
 
+## How to Install
+Install-Package GtfsNet
 
 ## Note
 This is not a fork of [OsmSharp/GTFS](https://github.com/OsmSharp/GTFS). 
