@@ -7,7 +7,7 @@ Install-Package [GtfsNet](https://www.nuget.org/packages/GtfsNet)
 ## Example
 1. Create a parser
 2. parse specified folder location ("feeds/subway" in the example below)
-3. Optional step: Validate the feed according to [GTFS specification]{https://developers.google.com/transit/gtfs/reference).
+3. ***Optional*** step: Validate the feed according to [GTFS specification](https://developers.google.com/transit/gtfs/reference).
 ```c#
   GtfsFeedParser parser = new GtfsFeedParser();
   GtfsFeed feed = parser.Parse("feeds/subway");
