@@ -7,8 +7,8 @@
     <ProjectGuid>{A594B284-4C85-4E4A-B582-62D8C4CD3FFA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Project.GtfsNet.Demo</RootNamespace>
-    <AssemblyName>Project.GtfsNet.Demo</AssemblyName>
+    <RootNamespace>GtfsNet.Demo</RootNamespace>
+    <AssemblyName>GtfsNet.Demo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Project.GtfsNet.Demo.Program2</StartupObject>
+    <StartupObject>GtfsNet.Demo.Program2</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">

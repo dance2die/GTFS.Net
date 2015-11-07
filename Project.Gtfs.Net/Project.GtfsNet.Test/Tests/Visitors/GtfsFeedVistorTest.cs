@@ -1,9 +1,8 @@
-﻿using GtfsNet;
-using GtfsNet.Visitors;
+﻿using GtfsNet.Visitors;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Tests.Visitors
+namespace GtfsNet.Test.Tests.Visitors
 {
 	public class GtfsFeedVistorTest
 	{

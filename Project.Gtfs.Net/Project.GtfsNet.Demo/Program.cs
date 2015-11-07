@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Project.GtfsNet.Demo
+namespace GtfsNet.Demo
 {
 	public class Program
 	{

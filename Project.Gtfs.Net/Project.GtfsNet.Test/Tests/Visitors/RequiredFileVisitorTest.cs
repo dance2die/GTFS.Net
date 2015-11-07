@@ -1,11 +1,10 @@
-﻿using GtfsNet;
-using GtfsNet.Parsers;
+﻿using GtfsNet.Parsers;
+using GtfsNet.Test.Fixtures;
 using GtfsNet.Visitors;
-using Project.GtfsNet.Test.Fixtures;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Tests.Visitors
+namespace GtfsNet.Test.Tests.Visitors
 {
 	/// <summary>
 	/// Test if all required files are parsed.

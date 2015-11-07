@@ -1,7 +1,7 @@
 ﻿using GtfsNet.Entities;
 using Xunit;
 
-namespace Project.GtfsNet.Test.Tests.Entities
+namespace GtfsNet.Test.Tests.Entities
 {
 	public class ShapeEqualityTest
 	{

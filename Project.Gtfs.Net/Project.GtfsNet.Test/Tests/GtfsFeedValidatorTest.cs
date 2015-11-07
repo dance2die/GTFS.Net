@@ -1,10 +1,9 @@
-﻿using GtfsNet;
-using GtfsNet.Parsers;
-using Project.GtfsNet.Test.Fixtures;
+﻿using GtfsNet.Parsers;
+using GtfsNet.Test.Fixtures;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Tests
+namespace GtfsNet.Test.Tests
 {
 	public class GtfsFeedValidatorTest : IClassFixture<VisitorPathFixture>
 	{

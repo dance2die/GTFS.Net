@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using GtfsNet;
+using GtfsNet.Test.Fixtures;
 using GtfsNet.Visitors;
-using Project.GtfsNet.Test.Fixtures;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Tests.Visitors
+namespace GtfsNet.Test.Tests.Visitors
 {
 	public class RequiredFieldVisitorTest : IClassFixture<VisitorPathFixture>
 	{

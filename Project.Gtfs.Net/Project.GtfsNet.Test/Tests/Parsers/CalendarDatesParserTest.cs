@@ -9,7 +9,7 @@ using GtfsNet.Parsers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Tests.Parsers
+namespace GtfsNet.Test.Tests.Parsers
 {
 	public class CalendarDatesParserTest : ParserTestBase
 	{

@@ -6,8 +6,8 @@
     <ProjectGuid>{6280B412-EC10-4C88-A9F6-BD66DA00A211}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Project.GtfsNet.Test</RootNamespace>
-    <AssemblyName>Project.GtfsNet.Test</AssemblyName>
+    <RootNamespace>GtfsNet.Test</RootNamespace>
+    <AssemblyName>GtfsNet.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

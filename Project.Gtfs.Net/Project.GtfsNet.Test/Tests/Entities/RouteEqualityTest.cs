@@ -2,7 +2,7 @@
 using GtfsNet.Enums;
 using Xunit;
 
-namespace Project.GtfsNet.Test.Tests.Entities
+namespace GtfsNet.Test.Tests.Entities
 {
 	public class RouteEqualityTest
 	{

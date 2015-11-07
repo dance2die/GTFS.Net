@@ -1,7 +1,7 @@
 using System.IO;
 using Xunit.Abstractions;
 
-namespace Project.GtfsNet.Test.Tests.Parsers
+namespace GtfsNet.Test.Tests.Parsers
 {
 	public abstract class ParserTestBase
 	{

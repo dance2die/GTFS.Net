@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
-using GtfsNet;
 using GtfsNet.Parsers;
 using GTFS;
 using GTFS.IO;
 
-namespace Project.GtfsNet.Demo
+namespace GtfsNet.Demo
 {
 	public class Program2
 	{

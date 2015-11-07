@@ -1,4 +1,4 @@
-﻿namespace Project.GtfsNet.Test.Fixtures
+﻿namespace GtfsNet.Test.Fixtures
 {
 	public class VisitorPathFixture
 	{
