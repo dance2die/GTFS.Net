@@ -16,6 +16,8 @@ Install-Package [GtfsNet](https://www.nuget.org/packages/GtfsNet)
   validator.Validate(feed);
 ```
 
+## Implementation detail
+Both `Parser` and `Validator` are implemented using a [**Visitor** Design Pattern](https://en.wikipedia.org/wiki/Visitor_pattern).
 
 ## Note
 This is not a fork of [OsmSharp/GTFS](https://github.com/OsmSharp/GTFS). 
