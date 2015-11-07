@@ -20,13 +20,13 @@ $versionNumber = ""
 
 # Specify any Release Notes for this package. 
 # These will only be included in the package if you have a .nuspec file for the project in the same directory as the project file.
-$releaseNotes = ""
+$releaseNotes = "First release of GTFS.Net; Contains a parser (GtfsFeedParser) and a validator (GtfsFeedValidator)"
 
 # Specify a specific Configuration and/or Platform to only create a NuGet package when building the project with this Configuration and/or Platform.
 #	e.g. $configuration = "Release"
 #		 $platform = "AnyCPU"
-$configuration = ""
-$platform = ""
+$configuration = "Debug"
+$platform = "AnyCPU"
 
 # Specify any NuGet Pack Properties to pass to MsBuild.
 #	e.g. $packProperties = "TargetFrameworkVersion=v3.5;Optimize=true"
