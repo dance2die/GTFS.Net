@@ -27,5 +27,5 @@ Install via [NuGet](https://www.nuget.org/packages/GtfsNet).
 
 ## Note
 This is not a fork of [OsmSharp/GTFS](https://github.com/OsmSharp/GTFS). 
-This project uses some part of that project (Entities) therefore not compatible
+This project *copied* some parts of the project (Entities) therefore not compatible
 
