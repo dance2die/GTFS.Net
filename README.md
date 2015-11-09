@@ -25,7 +25,6 @@ Install via [NuGet](https://www.nuget.org/packages/GtfsNet).
   1. [RequiredFileVisitor](https://github.com/dance2die/GTFS.Net/blob/master/Project.Gtfs.Net/Project.GtfsNet/Visitors/RequiredFileVisitor.cs): Check if all required `files` are parsed in a feed.
   2. [RequiredFieldVisitor](https://github.com/dance2die/GTFS.Net/blob/master/Project.Gtfs.Net/Project.GtfsNet/Visitors/RequiredFieldVisitor.cs): Check if all required `fields` in each file are parsed in a feed
 
-## Note
-This is not a fork of [OsmSharp/GTFS](https://github.com/OsmSharp/GTFS). 
-This project *copied* some parts of the project (Entities) therefore not compatible
+## Credit
+Many entity classes are copied from [OsmSharp/GTFS](https://github.com/OsmSharp/GTFS) project. 
 
