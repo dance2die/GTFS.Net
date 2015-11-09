@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using GtfsNet.Collections;
 using GtfsNet.Entities;
 
@@ -37,34 +38,39 @@ namespace GtfsNet.Visitors
 			}
 		}
 
-		public void Visit(AgencyCollection agencies)
+		private async Task SetValidityAsync<T>(HashSet<T> collection) where T : Entity
 		{
-			SetValidity(agencies);
+			await Task.Run(() => SetValidity(collection));
 		}
 
-		public void Visit(StopCollection stops)
+		public async void Visit(AgencyCollection agencies)
 		{
-			SetValidity(stops);
+			await SetValidityAsync(agencies);
 		}
 
-		public void Visit(RouteCollection routes)
+		public async void Visit(StopCollection stops)
 		{
-			SetValidity(routes);
+			await SetValidityAsync(stops);
 		}
 
-		public void Visit(TripCollection trips)
+		public async void Visit(RouteCollection routes)
 		{
-			SetValidity(trips);
+			await SetValidityAsync(routes);
 		}
 
-		public void Visit(StopTimeCollection stopTimes)
+		public async void Visit(TripCollection trips)
 		{
-			SetValidity(stopTimes);
+			await SetValidityAsync(trips);
 		}
 
-		public void Visit(CalendarCollection calendars)
+		public async void Visit(StopTimeCollection stopTimes)
 		{
-			SetValidity(calendars);
+			await SetValidityAsync(stopTimes);
+		}
+
+		public async void Visit(CalendarCollection calendars)
+		{
+			await SetValidityAsync(calendars);
 		}
 
 		public void Visit(CalendarDateCollection calendarDates)
