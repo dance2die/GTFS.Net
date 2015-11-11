@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 using GtfsNet.Collections;
 using GtfsNet.Visitors;
 
@@ -29,19 +30,35 @@ namespace GtfsNet
 
 		public void Accept(IFeedVisitor visitor)
 		{
-			Agencies.Accept(visitor);
-			Stops.Accept(visitor);
-			Routes.Accept(visitor);
-			Trips.Accept(visitor);
-			StopTimes.Accept(visitor);
-			Calendars.Accept(visitor);
-			CalendarDates.Accept(visitor);
-			FareAttributes.Accept(visitor);
-			FareRules.Accept(visitor);
-			Shapes.Accept(visitor);
-			Frequencies.Accept(visitor);
-			Transfers.Accept(visitor);
-			FeedInfos.Accept(visitor);
+			//Agencies.Accept(visitor);
+			//Stops.Accept(visitor);
+			//Routes.Accept(visitor);
+			//Trips.Accept(visitor);
+			//StopTimes.Accept(visitor);
+			//Calendars.Accept(visitor);
+			//CalendarDates.Accept(visitor);
+			//FareAttributes.Accept(visitor);
+			//FareRules.Accept(visitor);
+			//Shapes.Accept(visitor);
+			//Frequencies.Accept(visitor);
+			//Transfers.Accept(visitor);
+			//FeedInfos.Accept(visitor);
+
+			Parallel.Invoke(
+				() => Agencies.Accept(visitor),
+				() => Stops.Accept(visitor),
+				() => Routes.Accept(visitor),
+				() => Trips.Accept(visitor),
+				() => StopTimes.Accept(visitor),
+				() => Calendars.Accept(visitor),
+				() => CalendarDates.Accept(visitor),
+				() => FareAttributes.Accept(visitor),
+				() => FareRules.Accept(visitor),
+				() => Shapes.Accept(visitor),
+				() => Frequencies.Accept(visitor),
+				() => Transfers.Accept(visitor),
+				() => FeedInfos.Accept(visitor)
+			);
 		}
 	}
 }

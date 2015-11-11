@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using GtfsNet.Collections;
 using GtfsNet.Entities;
 
@@ -38,74 +37,69 @@ namespace GtfsNet.Visitors
 			}
 		}
 
-		private async Task SetValidityAsync<T>(HashSet<T> collection) where T : Entity
+		public void Visit(AgencyCollection agencies)
 		{
-			await Task.Run(() => SetValidity(collection));
+			SetValidity(agencies);
 		}
 
-		public async void Visit(AgencyCollection agencies)
+		public void Visit(StopCollection stops)
 		{
-			await SetValidityAsync(agencies);
+			SetValidity(stops);
 		}
 
-		public async void Visit(StopCollection stops)
+		public void Visit(RouteCollection routes)
 		{
-			await SetValidityAsync(stops);
+			SetValidity(routes);
 		}
 
-		public async void Visit(RouteCollection routes)
+		public void Visit(TripCollection trips)
 		{
-			await SetValidityAsync(routes);
+			SetValidity(trips);
 		}
 
-		public async void Visit(TripCollection trips)
+		public void Visit(StopTimeCollection stopTimes)
 		{
-			await SetValidityAsync(trips);
+			SetValidity(stopTimes);
 		}
 
-		public async void Visit(StopTimeCollection stopTimes)
+		public void Visit(CalendarCollection calendars)
 		{
-			await SetValidityAsync(stopTimes);
-		}
-
-		public async void Visit(CalendarCollection calendars)
-		{
-			await SetValidityAsync(calendars);
+			SetValidity(calendars);
 		}
 
 		public void Visit(CalendarDateCollection calendarDates)
 		{
-			
+
 		}
 
 		public void Visit(FareAttributeCollection fareAttributes)
 		{
-			
+
 		}
 
 		public void Visit(FareRuleCollection fareRules)
 		{
-			
+
 		}
 
 		public void Visit(ShapeCollection shapes)
 		{
-			
+
 		}
 
 		public void Visit(FrequencyCollection frequencies)
 		{
-			
+
 		}
 
 		public void Visit(TransferCollection transfers)
 		{
-			
+
 		}
 
 		public void Visit(FeedInfoCollection feedInfos)
 		{
-			
+
 		}
 	}
 }
