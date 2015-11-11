@@ -1,4 +1,6 @@
-﻿using GtfsNet.Parsers;
+﻿using System.Collections.Generic;
+using System.Linq;
+using GtfsNet.Parsers;
 using GtfsNet.Test.Fixtures;
 using GtfsNet.Visitors;
 using Xunit;
@@ -92,7 +94,8 @@ namespace GtfsNet.Test.Tests.Visitors
 
 		private void PrintUnparsedFiles(RequiredFileVisitor sut)
 		{
-			foreach (string unparsedFile in sut.UnparsedFiles)
+			List<string> files = sut.UnparsedFiles.ToList();
+			foreach (string unparsedFile in files)
 			{
 				_output.WriteLine("Not Parsed: {0}", unparsedFile);
 			}

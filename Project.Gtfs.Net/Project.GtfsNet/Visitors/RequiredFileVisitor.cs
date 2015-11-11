@@ -69,37 +69,37 @@ namespace GtfsNet.Visitors
 
 		public void Visit(CalendarDateCollection calendarDates)
 		{
-			
+
 		}
 
 		public void Visit(FareAttributeCollection fareAttributes)
 		{
-			
+
 		}
 
 		public void Visit(FareRuleCollection fareRules)
 		{
-			
+
 		}
 
 		public void Visit(ShapeCollection shapes)
 		{
-			
+
 		}
 
 		public void Visit(FrequencyCollection frequencies)
 		{
-			
+
 		}
 
 		public void Visit(TransferCollection transfers)
 		{
-			
+
 		}
 
 		public void Visit(FeedInfoCollection feedInfos)
 		{
-			
+
 		}
 	}
 }
