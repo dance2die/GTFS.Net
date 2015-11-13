@@ -10,17 +10,24 @@ namespace GtfsNet.Demo
 	{
 		public static void Main()
 		{
-			TestGtfsNet();
-			TestGtfs();
+			//TestGtfsNet();
+			//TestGtfs();
+
+			WriteToMongoDb();
 
 			Console.WriteLine("Press ENTER to continue...");
 			Console.Read();
 		}
 
-		private static void TestGtfsNet()
+		private static void WriteToMongoDb()
 		{
-			GtfsFeedParser parser = new GtfsFeedParser();
-			GtfsFeed feed = parser.Parse(Paths.GOOD_FEED_PATH);
+			var feed = GetGTfsFeed(Paths.GOOD_FEED_PATH);
+			//feed.ToJson();
+		}
+
+		private static GtfsFeed GetGTfsFeed(string feedPath)
+		{
+			return new GtfsFeedParser().Parse(feedPath);
 		}
 
 		private static void TestGtfs()
