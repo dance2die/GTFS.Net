@@ -29,4 +29,4 @@ Install via [NuGet](https://www.nuget.org/packages/GtfsNet).
 Many entity classes are copied from [OsmSharp/GTFS](https://github.com/OsmSharp/GTFS) project. 
 
 ## Next Version
-* Version 1.1 will parse files asynchronously to speed up the process.
+* Implement async methods
